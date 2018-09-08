@@ -73,6 +73,18 @@
           <DataField>Cantidad</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="IdCliente1">
+          <DataField>IdCliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VDE_TIPODOCTO">
+          <DataField>VDE_TIPODOCTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SerieCompleta">
+          <DataField>SerieCompleta</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>Conexion</DataSourceName>
@@ -90,7 +102,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>c:\users\hp\documents\visual studio 2010\Projects\ReportesCheverolet\ReportesCheverolet\DataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\DesarrolloNetwareMX\LinkBills\ReportesCheverolet\ReportesCheverolet\DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>ProcesarLibro</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -292,6 +304,9 @@
               <Width>1.44259in</Width>
             </TablixColumn>
             <TablixColumn>
+              <Width>0.98425in</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>1.578in</Width>
             </TablixColumn>
             <TablixColumn>
@@ -395,9 +410,10 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <ColSpan>16</ColSpan>
+                    <ColSpan>17</ColSpan>
                   </CellContents>
                 </TablixCell>
+                <TablixCell />
                 <TablixCell />
                 <TablixCell />
                 <TablixCell />
@@ -427,7 +443,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Serie</Value>
+                              <Value>Vde_TipoDocto</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -486,7 +502,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Inventario</Value>
+                              <Value>Serie Completa</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -501,6 +517,65 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </RightBorder>
+                        <BackgroundColor>Blue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Serie</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Silver</Color>
@@ -1369,14 +1444,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Serie">
+                    <Textbox Name="VDE_TIPODOCTO">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Serie.Value</Value>
+                              <Value>=Fields!VDE_TIPODOCTO.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1386,7 +1461,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Serie</rd:DefaultName>
+                      <rd:DefaultName>VDE_TIPODOCTO</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Silver</Color>
@@ -1423,14 +1498,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Inventario">
+                    <Textbox Name="SerieCompleta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Inventario.Value</Value>
+                              <Value>=Fields!SerieCompleta.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1440,7 +1515,61 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Inventario</rd:DefaultName>
+                      <rd:DefaultName>SerieCompleta</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Silver</Color>
+                          <Style>Solid</Style>
+                          <Width>0.5pt</Width>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Serie">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Serie.Value</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>9pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Serie</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Silver</Color>
@@ -2024,7 +2153,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Porcentaje.Value</Value>
+                              <Value>=Fields!Porcentaje.Value &amp; "%"</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -2253,6 +2382,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -2273,7 +2403,7 @@
           <BreakLocation>End</BreakLocation>
         </PageBreak>
         <Height>1.8cm</Height>
-        <Width>61.51058cm</Width>
+        <Width>64.01058cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -6545,7 +6675,7 @@
       <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
-  <Width>24.21678in</Width>
+  <Width>25.20102in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

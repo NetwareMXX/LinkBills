@@ -381,6 +381,12 @@ namespace ReportesCheverolet {
             
             private global::System.Data.DataColumn columnCantidad;
             
+            private global::System.Data.DataColumn columnIdCliente1;
+            
+            private global::System.Data.DataColumn columnVDE_TIPODOCTO;
+            
+            private global::System.Data.DataColumn columnSerieCompleta;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProcesarLibroDataTable() {
@@ -544,6 +550,30 @@ namespace ReportesCheverolet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdCliente1Column {
+                get {
+                    return this.columnIdCliente1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VDE_TIPODOCTOColumn {
+                get {
+                    return this.columnVDE_TIPODOCTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SerieCompletaColumn {
+                get {
+                    return this.columnSerieCompleta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -595,7 +625,10 @@ namespace ReportesCheverolet {
                         decimal Porcentaje, 
                         string Dias, 
                         string Estatus, 
-                        string Cantidad) {
+                        string Cantidad, 
+                        string IdCliente1, 
+                        string VDE_TIPODOCTO, 
+                        string SerieCompleta) {
                 ProcesarLibroRow rowProcesarLibroRow = ((ProcesarLibroRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Serie,
@@ -613,7 +646,10 @@ namespace ReportesCheverolet {
                         Porcentaje,
                         Dias,
                         Estatus,
-                        Cantidad};
+                        Cantidad,
+                        IdCliente1,
+                        VDE_TIPODOCTO,
+                        SerieCompleta};
                 rowProcesarLibroRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProcesarLibroRow);
                 return rowProcesarLibroRow;
@@ -652,6 +688,9 @@ namespace ReportesCheverolet {
                 this.columnDias = base.Columns["Dias"];
                 this.columnEstatus = base.Columns["Estatus"];
                 this.columnCantidad = base.Columns["Cantidad"];
+                this.columnIdCliente1 = base.Columns["IdCliente1"];
+                this.columnVDE_TIPODOCTO = base.Columns["VDE_TIPODOCTO"];
+                this.columnSerieCompleta = base.Columns["SerieCompleta"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -689,6 +728,12 @@ namespace ReportesCheverolet {
                 base.Columns.Add(this.columnEstatus);
                 this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidad);
+                this.columnIdCliente1 = new global::System.Data.DataColumn("IdCliente1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdCliente1);
+                this.columnVDE_TIPODOCTO = new global::System.Data.DataColumn("VDE_TIPODOCTO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVDE_TIPODOCTO);
+                this.columnSerieCompleta = new global::System.Data.DataColumn("SerieCompleta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSerieCompleta);
                 this.columnSerie.ReadOnly = true;
                 this.columnSerie.MaxLength = 36;
                 this.columnInventario.ReadOnly = true;
@@ -712,8 +757,13 @@ namespace ReportesCheverolet {
                 this.columnDias.MaxLength = 11;
                 this.columnEstatus.ReadOnly = true;
                 this.columnEstatus.MaxLength = 11;
+                this.columnCantidad.AllowDBNull = false;
                 this.columnCantidad.ReadOnly = true;
                 this.columnCantidad.MaxLength = 11;
+                this.columnIdCliente1.Caption = "IdCliente";
+                this.columnIdCliente1.MaxLength = 50;
+                this.columnVDE_TIPODOCTO.MaxLength = 50;
+                this.columnSerieCompleta.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2104,15 +2154,58 @@ namespace ReportesCheverolet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Cantidad {
                 get {
-                    try {
-                        return ((string)(this[this.tableProcesarLibro.CantidadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'ProcesarLibro\' es DBNull.", e);
-                    }
+                    return ((string)(this[this.tableProcesarLibro.CantidadColumn]));
                 }
                 set {
                     this[this.tableProcesarLibro.CantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string IdCliente1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableProcesarLibro.IdCliente1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IdCliente1\' de la tabla \'ProcesarLibro\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProcesarLibro.IdCliente1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VDE_TIPODOCTO {
+                get {
+                    try {
+                        return ((string)(this[this.tableProcesarLibro.VDE_TIPODOCTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'VDE_TIPODOCTO\' de la tabla \'ProcesarLibro\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProcesarLibro.VDE_TIPODOCTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SerieCompleta {
+                get {
+                    try {
+                        return ((string)(this[this.tableProcesarLibro.SerieCompletaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SerieCompleta\' de la tabla \'ProcesarLibro\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProcesarLibro.SerieCompletaColumn] = value;
                 }
             }
             
@@ -2298,14 +2391,38 @@ namespace ReportesCheverolet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCantidadNull() {
-                return this.IsNull(this.tableProcesarLibro.CantidadColumn);
+            public bool IsIdCliente1Null() {
+                return this.IsNull(this.tableProcesarLibro.IdCliente1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCantidadNull() {
-                this[this.tableProcesarLibro.CantidadColumn] = global::System.Convert.DBNull;
+            public void SetIdCliente1Null() {
+                this[this.tableProcesarLibro.IdCliente1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVDE_TIPODOCTONull() {
+                return this.IsNull(this.tableProcesarLibro.VDE_TIPODOCTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVDE_TIPODOCTONull() {
+                this[this.tableProcesarLibro.VDE_TIPODOCTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSerieCompletaNull() {
+                return this.IsNull(this.tableProcesarLibro.SerieCompletaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSerieCompletaNull() {
+                this[this.tableProcesarLibro.SerieCompletaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3320,7 +3437,6 @@ namespace ReportesCheverolet.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("FechaFactura", "FechaFactura");
             tableMapping.ColumnMappings.Add("Unidad", "Unidad");
             tableMapping.ColumnMappings.Add("TipoDeVenta", "TipoDeVenta");
-            tableMapping.ColumnMappings.Add("IdCliente", "IdCliente");
             tableMapping.ColumnMappings.Add("Cliente", "Cliente");
             tableMapping.ColumnMappings.Add("Vendedor", "Vendedor");
             tableMapping.ColumnMappings.Add("TotalVenta", "TotalVenta");
@@ -3330,6 +3446,9 @@ namespace ReportesCheverolet.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Dias", "Dias");
             tableMapping.ColumnMappings.Add("Estatus", "Estatus");
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
+            tableMapping.ColumnMappings.Add("IdCliente", "IdCliente1");
+            tableMapping.ColumnMappings.Add("VDE_TIPODOCTO", "VDE_TIPODOCTO");
+            tableMapping.ColumnMappings.Add("SerieCompleta", "SerieCompleta");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
