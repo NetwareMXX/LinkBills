@@ -67,6 +67,7 @@ namespace Troncoso.Models.EntityManager
             _html.Append("              <th>Cate</th>");
             _html.Append("              <th>MOV_FECHOPE</th>");
             _html.Append("              <th>MOV_HORAOPE</th>");
+            _html.Append("              <th>NOMBRE</th>");
             _html.Append("                        </tr>");
             _html.Append("</thead>");
             _html.Append("<tbody>");
@@ -96,6 +97,7 @@ namespace Troncoso.Models.EntityManager
                 _html.Append("<td>" + _row["Cate"] + "</td>");
                 _html.Append("<td>" + _row["MOV_FECHOPE"] + "</td>");
                 _html.Append("<td>" + _row["MOV_HORAOPE"] + "</td>");
+                _html.Append("<td>" + _row["Nombre"] + "</td>");
                 _html.Append("</tr>");
                 ++_contado;
 
