@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Bitacora";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<h2>Bitacora</h2>
+@section Scripts {
+    @Scripts.Render("~/scripts/Bitacora/Operaciones.js")
+    @Scripts.Render("~/scripts/Bitacora/Registrar.js")
+
+
+}
+<div id="view" class="card">
+    <div class="header">
+
+
+        <ul class="header-dropdown m-r--5">
+
+            <li class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">more_vert</i>
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li><a id="aCapturar" href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">screen_rotation</i>Capturar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">save</i>Guardar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">cancel</i>Cancelar</a></li>
+                    @*<li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">delete</i>Eliminar</a></li>*@
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="body">
+        <div class="row clearfix">
+            <div>
+                <div class="panel-group" id="accordion_11" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-col-red">
+                        <div class="panel-heading" role="tab" id="headingOne_11">
+                            <h4 class="panel-title">
+                                <a id="aPanel" role="button" data-toggle="collapse" data-parent="#accordion_11" href="#collapseOne_11" aria-expanded="false" aria-controls="collapseOne_11" class="collapsed">
+                                    Buscar Logs
+                                </a>
+
+                            </h4>
+
+
+                        </div>
+                        <div id="collapseOne_11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne_11" aria-expanded="false">
+                            <div class="panel-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <form>
+
+                                        <div class="row clearfix">
+                                            <div class="col-sm-3">
+                                                <label for="ddlTipoBusqueda">Tipo de Busqueda</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="hidden" value="0" id="hdIdPedido" />
+                                                        <select id="ddlTipoBusqueda" class="combo form-control show-tick">
+                                                            <option value="1" selected="selected">Fechas</option>
+                                                            <option value="2">Accion</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="rowFecha" class="row clearfix opciones">
+                                            <div class="col-sm-3">
+                                                <label for="txtFechaInicio">Fecha Inicio</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="text" id="txtFechaInicio" class="datepicker form-control" placeholder="Por Favor Seleccione la Fecha de Inicio...">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-3">
+
+                                                <label for="txtFechaFin">Fecha Fin</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="text" id="txtFechaFin" class="datepicker form-control" placeholder="Por Favor Seleccione la Fecha Fin...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="rowFolio" style="display:none" class="row clearfix opciones">
+                                            <div class="col-sm-6">
+                                                <label for="txtFolioPedido">Accion</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="text" id="txtFolioPedido" class="form-control" placeholder="Por Favor Ingrese el Folio del Pedido...">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div id="rowCliente"  class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <label for="txtCliente">Usuarios (Separados por , en caso de buscar mas de 1 usuario)</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        @*<input type="text" id="txtCliente" class="form-control" placeholder="Por Favor Ingrese el cliente...">*@
+                                                        @Html.DropDownList("txtCliente", (IEnumerable
+
+                                            <SelectListItem>)ViewBag.Usuarios, new { @class = "combo form-control show-tick" ,@multiple="multiple"})
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="row clearfix">
+                                            <div class="col-md-2">
+                                                <button v-on:click="guardar" type="button" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">search</i>
+                                                    <span>Buscar</span>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button v-on:click="cancelar" type="button" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">cancel</i>
+                                                    <span>Cancelar</span>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div id="miGrid" kendo-grid="miGrid" class="MyGrid" k-rebind="KendoCulture" options="mainGridOptions"></div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

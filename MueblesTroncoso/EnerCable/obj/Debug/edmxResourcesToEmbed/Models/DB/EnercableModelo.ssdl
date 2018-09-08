@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnercableBD.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bitacoras">
+    <Key>
+      <PropertyRef Name="IdBitacora" />
+    </Key>
+    <Property Name="IdBitacora" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Accion" Type="varchar(max)" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cabeceras">
+    <Key>
+      <PropertyRef Name="IdCabecera" />
+    </Key>
+    <Property Name="IdCabecera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" />
+    <Property Name="Icono" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Estatus">
+    <Key>
+      <PropertyRef Name="IdEstatus" />
+    </Key>
+    <Property Name="IdEstatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Modulo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IdCabecera" Type="int" Nullable="false" />
+    <Property Name="Icono" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NotasDeCredito">
+    <Key>
+      <PropertyRef Name="IdNotaDeCredito" />
+    </Key>
+    <Property Name="IdNotaDeCredito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPedido" Type="int" Nullable="false" />
+    <Property Name="NotaDeCredito" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Folio" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Serie" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubTotal" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Iva" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Total" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Perfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+    </Key>
+    <Property Name="IdPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Perfil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdEstatus" Type="int" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PermisosPerfiles">
+    <Key>
+      <PropertyRef Name="IdPermisoPerfil" />
+    </Key>
+    <Property Name="IdPermisoPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdModulo" Type="int" Nullable="false" />
+    <Property Name="IdPerfil" Type="int" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sesiones">
+    <Key>
+      <PropertyRef Name="IdSesion" />
+    </Key>
+    <Property Name="IdSesion" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="Ip" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdPerfil" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Paterno" Type="varchar" MaxLength="50" />
+    <Property Name="Materno" Type="varchar" MaxLength="50" />
+    <Property Name="Correo" Type="varchar" MaxLength="150" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
+    <Property Name="IdEstatus" Type="int" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MueblesTroncoso.dbo.vwArticulos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwArticulos">
+    <Key>
+      <PropertyRef Name="IdArticulo" />
+      <PropertyRef Name="ClaveArticulo" />
+      <PropertyRef Name="Descripcion" />
+    </Key>
+    <Property Name="IdArticulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClaveArticulo" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MueblesTroncoso.dbo.vwClientesFacturas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwClientesFacturas">
+    <Key>
+      <PropertyRef Name="IdClienteFactura" />
+      <PropertyRef Name="RFC" />
+    </Key>
+    <Property Name="IdClienteFactura" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Cliente" Type="varchar" MaxLength="200" />
+    <Property Name="RFC" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="100" />
+    <Property Name="Calle" Type="varchar" MaxLength="100" />
+    <Property Name="NumeroExterior" Type="varchar" MaxLength="50" />
+    <Property Name="NumeroInterior" Type="varchar" MaxLength="50" />
+    <Property Name="Colonia" Type="varchar" MaxLength="100" />
+    <Property Name="Ciudad" Type="varchar" MaxLength="100" />
+    <Property Name="DelegacionMunicipio" Type="varchar" MaxLength="100" />
+    <Property Name="CP" Type="varchar" MaxLength="8" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" />
+    <Property Name="Pais" Type="varchar" MaxLength="50" />
+    <Property Name="Referencia" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MueblesTroncoso.dbo.vwDetallesPedidos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwDetallesPedidos">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+      <PropertyRef Name="Consecutivo" />
+      <PropertyRef Name="IdArticulo" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="PrecioUnitario" />
+      <PropertyRef Name="Descuento1" />
+      <PropertyRef Name="Descuento2" />
+      <PropertyRef Name="Importe" />
+      <PropertyRef Name="Unidad" />
+    </Key>
+    <Property Name="IdPedido" Type="int" Nullable="false" />
+    <Property Name="Consecutivo" Type="int" Nullable="false" />
+    <Property Name="IdArticulo" Type="int" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Descuento1" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Descuento2" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Importe" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CantidadEntregada" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Unidad" Type="varchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MueblesTroncoso.dbo.vwPedidos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwPedidos">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+      <PropertyRef Name="FechaPedido" />
+      <PropertyRef Name="IdTienda" />
+    </Key>
+    <Property Name="IdPedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaPedido" Type="datetime" Nullable="false" />
+    <Property Name="Folio" Type="varchar" MaxLength="10" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IdClienteFactura" Type="int" />
+    <Property Name="IdEstatusEntrega" Type="smallint" />
+    <Property Name="IdTienda" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MueblesTroncoso.dbo.vwPedidosFacturados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwPedidosFacturados">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+      <PropertyRef Name="FechaPedido" />
+    </Key>
+    <Property Name="IdPedido" Type="int" Nullable="false" />
+    <Property Name="Cliente" Type="varchar" MaxLength="200" />
+    <Property Name="FechaPedido" Type="datetime" Nullable="false" />
+    <Property Name="Folio" Type="varchar" MaxLength="10" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MueblesTroncoso.dbo.vwPerfiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwPerfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+      <PropertyRef Name="Perfil" />
+      <PropertyRef Name="IdEstatus" />
+      <PropertyRef Name="IdSesion" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="Estatus" />
+    </Key>
+    <Property Name="IdPerfil" Type="int" Nullable="false" />
+    <Property Name="Perfil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdEstatus" Type="int" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="Estatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MueblesTroncoso.dbo.vwUsuarios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwUsuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="IdPerfil" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="IdEstatus" />
+      <PropertyRef Name="IdSesion" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="Perfil" />
+      <PropertyRef Name="Estatus" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdPerfil" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Paterno" Type="varchar" MaxLength="50" />
+    <Property Name="Materno" Type="varchar" MaxLength="50" />
+    <Property Name="Correo" Type="varchar" MaxLength="150" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
+    <Property Name="IdEstatus" Type="int" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="Perfil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Function Name="BuscarPedidosFacturados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoBusqueda" Type="int" Mode="In" />
+    <Parameter Name="FechaInicial" Type="varchar" Mode="In" />
+    <Parameter Name="FechaFinal" Type="varchar" Mode="In" />
+    <Parameter Name="Folio" Type="varchar" Mode="In" />
+    <Parameter Name="Cliente" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="CrearSesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Contraseña" Type="varchar" Mode="In" />
+    <Parameter Name="Ip" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="DividirCadena" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cadena" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Divisor" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Campo" Type="nvarchar(max)" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="EliminarPermisoPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdPermisoPerfil" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarBitacora" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Accion" Type="varchar(max)" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdPerfil" Type="int" Mode="In" />
+    <Parameter Name="IdEstatus" Type="int" Mode="In" />
+    <Parameter Name="Perfil" Type="varchar" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarPermisoPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdModulo" Type="int" Mode="In" />
+    <Parameter Name="IdPerfil" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="IdPerfil" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Paterno" Type="varchar" Mode="In" />
+    <Parameter Name="Materno" Type="varchar" Mode="In" />
+    <Parameter Name="Correo" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="varchar" Mode="In" />
+    <Parameter Name="IdEstatus" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="RegresaDatosClienteFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdPedido" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegresaDetallePorPedido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdPedido" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegresaSoloNumeros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Folio" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="EnercableBDStoreContainer">
+    <EntitySet Name="Bitacoras" EntityType="Self.Bitacoras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cabeceras" EntityType="Self.Cabeceras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NotasDeCredito" EntityType="Self.NotasDeCredito" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perfiles" EntityType="Self.Perfiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PermisosPerfiles" EntityType="Self.PermisosPerfiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sesiones" EntityType="Self.Sesiones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vwArticulos" EntityType="Self.vwArticulos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwArticulos].[IdArticulo] AS [IdArticulo], 
+    [vwArticulos].[ClaveArticulo] AS [ClaveArticulo], 
+    [vwArticulos].[Descripcion] AS [Descripcion]
+    FROM [dbo].[vwArticulos] AS [vwArticulos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwClientesFacturas" EntityType="Self.vwClientesFacturas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwClientesFacturas].[IdClienteFactura] AS [IdClienteFactura], 
+    [vwClientesFacturas].[Cliente] AS [Cliente], 
+    [vwClientesFacturas].[RFC] AS [RFC], 
+    [vwClientesFacturas].[Correo] AS [Correo], 
+    [vwClientesFacturas].[Calle] AS [Calle], 
+    [vwClientesFacturas].[NumeroExterior] AS [NumeroExterior], 
+    [vwClientesFacturas].[NumeroInterior] AS [NumeroInterior], 
+    [vwClientesFacturas].[Colonia] AS [Colonia], 
+    [vwClientesFacturas].[Ciudad] AS [Ciudad], 
+    [vwClientesFacturas].[DelegacionMunicipio] AS [DelegacionMunicipio], 
+    [vwClientesFacturas].[CP] AS [CP], 
+    [vwClientesFacturas].[Estado] AS [Estado], 
+    [vwClientesFacturas].[Pais] AS [Pais], 
+    [vwClientesFacturas].[Referencia] AS [Referencia]
+    FROM [dbo].[vwClientesFacturas] AS [vwClientesFacturas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwDetallesPedidos" EntityType="Self.vwDetallesPedidos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwDetallesPedidos].[IdPedido] AS [IdPedido], 
+    [vwDetallesPedidos].[Consecutivo] AS [Consecutivo], 
+    [vwDetallesPedidos].[IdArticulo] AS [IdArticulo], 
+    [vwDetallesPedidos].[Cantidad] AS [Cantidad], 
+    [vwDetallesPedidos].[PrecioUnitario] AS [PrecioUnitario], 
+    [vwDetallesPedidos].[Descuento1] AS [Descuento1], 
+    [vwDetallesPedidos].[Descuento2] AS [Descuento2], 
+    [vwDetallesPedidos].[Importe] AS [Importe], 
+    [vwDetallesPedidos].[CantidadEntregada] AS [CantidadEntregada], 
+    [vwDetallesPedidos].[Unidad] AS [Unidad]
+    FROM [dbo].[vwDetallesPedidos] AS [vwDetallesPedidos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwPedidos" EntityType="Self.vwPedidos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwPedidos].[IdPedido] AS [IdPedido], 
+    [vwPedidos].[FechaPedido] AS [FechaPedido], 
+    [vwPedidos].[Folio] AS [Folio], 
+    [vwPedidos].[Total] AS [Total], 
+    [vwPedidos].[IdClienteFactura] AS [IdClienteFactura], 
+    [vwPedidos].[IdEstatusEntrega] AS [IdEstatusEntrega], 
+    [vwPedidos].[IdTienda] AS [IdTienda]
+    FROM [dbo].[vwPedidos] AS [vwPedidos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwPedidosFacturados" EntityType="Self.vwPedidosFacturados" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwPedidosFacturados].[IdPedido] AS [IdPedido], 
+    [vwPedidosFacturados].[Cliente] AS [Cliente], 
+    [vwPedidosFacturados].[FechaPedido] AS [FechaPedido], 
+    [vwPedidosFacturados].[Folio] AS [Folio], 
+    [vwPedidosFacturados].[Total] AS [Total]
+    FROM [dbo].[vwPedidosFacturados] AS [vwPedidosFacturados]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwPerfiles" EntityType="Self.vwPerfiles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwPerfiles].[IdPerfil] AS [IdPerfil], 
+    [vwPerfiles].[Perfil] AS [Perfil], 
+    [vwPerfiles].[IdEstatus] AS [IdEstatus], 
+    [vwPerfiles].[IdSesion] AS [IdSesion], 
+    [vwPerfiles].[FechaSistema] AS [FechaSistema], 
+    [vwPerfiles].[Estatus] AS [Estatus]
+    FROM [dbo].[vwPerfiles] AS [vwPerfiles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwUsuarios" EntityType="Self.vwUsuarios" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwUsuarios].[IdUsuario] AS [IdUsuario], 
+    [vwUsuarios].[Usuario] AS [Usuario], 
+    [vwUsuarios].[Password] AS [Password], 
+    [vwUsuarios].[IdPerfil] AS [IdPerfil], 
+    [vwUsuarios].[Nombre] AS [Nombre], 
+    [vwUsuarios].[Paterno] AS [Paterno], 
+    [vwUsuarios].[Materno] AS [Materno], 
+    [vwUsuarios].[Correo] AS [Correo], 
+    [vwUsuarios].[Telefono] AS [Telefono], 
+    [vwUsuarios].[IdEstatus] AS [IdEstatus], 
+    [vwUsuarios].[IdSesion] AS [IdSesion], 
+    [vwUsuarios].[FechaSistema] AS [FechaSistema], 
+    [vwUsuarios].[Perfil] AS [Perfil], 
+    [vwUsuarios].[Estatus] AS [Estatus]
+    FROM [dbo].[vwUsuarios] AS [vwUsuarios]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

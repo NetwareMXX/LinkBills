@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<h2>Usuarios</h2>
+@section Scripts {
+    @Scripts.Render("~/scripts/Operaciones.js")
+    @Scripts.Render("~/scripts/Usuario/Registrar.js")
+
+
+}
+
+
+<div id="view" class="card">
+    <div class="header">
+        <h2>Registro de Usuarios</h2>
+
+        <ul class="header-dropdown m-r--5">
+
+            <li class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">more_vert</i>
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li><a id="aCapturar" href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">screen_rotation</i>Capturar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">save</i>Guardar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">cancel</i>Cancelar</a></li>
+                    @*<li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">delete</i>Eliminar</a></li>*@
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="body">
+
+        <div class="row clearfix">
+            <div>
+                <div class="panel-group" id="accordion_11" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-col-red">
+                        <div class="panel-heading" role="tab" id="headingOne_11">
+                            <h4 class="panel-title">
+                                <a id="aPanel" role="button" data-toggle="collapse" data-parent="#accordion_11" href="#collapseOne_11" aria-expanded="false" aria-controls="collapseOne_11" class="collapsed">
+                                    Capturar Información de Usuarios
+                                </a>
+
+                            </h4>
+
+
+                        </div>
+                        <div id="collapseOne_11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne_11" aria-expanded="false">
+                            <div class="panel-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <form>
+                                        <div class="row clearfix">
+
+
+                                            <div class="col-sm-4">
+                                                <label for="txtNombre">Nombre</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="hidden"  value="0" id="hdIdUsuario" />
+                                                        <input id="txtNombre"  class="form-control" placeholder="Ingrese Su Nombre" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label for="txtApPaterno">Apellido Paterno</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input id="txtApPaterno" class="form-control" placeholder="Ingrese Su Apellido Paterno" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="txtApMaterno">Apellido Materno</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input id="txtApMaterno"  class="form-control" placeholder="Ingrese Su Apellido Materno" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row clearfix">
+
+
+                                            <div class="col-sm-4">
+                                                <label for="txtNombreUsuario">Nombre de Usuario</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input id="txtNombreUsuario" value=""  class="form-control" placeholder="Ingrese Su Nombre de Usuario" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label for="txtPassword">Password</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input id="txtPassword" name="txtPassword" value="" class="form-control" placeholder="Ingrese Su Password" type="password">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="ddlPerfil">Perfil</label>
+                                                @Html.DropDownList("ddlPerfil", (IEnumerable
+
+                                            <SelectListItem>)ViewBag.Niveles, new { @class = "combo form-control show-tick" })
+                                            </div>
+
+                                        </div>
+                                        <div class="row clearfix">
+
+
+                                            <div class="col-sm-4">
+                                                <label for="txtCorreo">Correo</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input id="txtCorreo"  class="form-control" placeholder="Ingrese Su Correo" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label for="txtTelefono">Telefono</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input id="txtTelefono"  class="form-control" placeholder="Ingrese Su Telefono" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="ddlEstatus">Estatus</label>
+                                                @Html.DropDownList("ddlEstatus", (IEnumerable
+
+                                            <SelectListItem>)ViewBag.Estatus, new { @class = "combo form-control show-tick" })
+                                            </div>
+
+                                        </div>
+                                        <div class="row clearfix">
+                                            <div class="col-md-2">
+                                                <button v-on:click="guardar" type="button" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">save</i>
+                                                    <span>Guardar</span>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button v-on:click="cancelar" type="button" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">cancel</i>
+                                                    <span>Cancelar</span>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div id="miGrid" kendo-grid="miGrid" class="MyGrid" k-rebind="KendoCulture" options="mainGridOptions"></div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+

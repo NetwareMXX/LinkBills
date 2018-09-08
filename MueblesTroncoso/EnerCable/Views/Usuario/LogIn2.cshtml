@@ -1,0 +1,75 @@
+﻿@model Troncoso.Models.ViewModel.UsuarioLoginView
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Troncoso</title>
+    <!-- Favicon-->
+    <link rel="icon" href="~/Imagenes/favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    @using System.Web.Optimization
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/javaScriptLogin")
+    @Scripts.Render("~/bundles/login")
+
+
+</head>
+<body class="login-page">
+    <div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);"><b>Muebles Troncoso</b></a>
+            <small>COIN System - Commercial Invoice System</small>
+        </div>
+        <div class="card">
+            <div class="body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="msg">Inicio de Sesion</div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                            @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @placeholder="Usuario", @required = "required", @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "text-danger" })
+
+
+                            @*<input type="text" class="form-control" name="username" placeholder="Usuario" required autofocus>*@
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @placeholder = "Password", @required = "required", @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+
+
+
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-xs-4">
+                            <button class="btn btn-block bg-pink waves-effect" type="submit">Accesar</button>
+                        </div>
+                    </div>
+
+
+                }
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

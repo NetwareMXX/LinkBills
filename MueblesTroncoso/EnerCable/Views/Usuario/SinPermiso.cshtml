@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>404 | Chevrolet Tlahuac - LinkBills</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+  
+    @Styles.Render("~/Content/cssSinPermiso")
+    @Scripts.Render("~/bundles/javaScriptSinPermiso")
+    
+     
+</head>
+
+<body class="four-zero-four">
+    <div class="four-zero-four-container">
+        <div class="error-code">404</div>
+        <div class="error-message">No Cuenta Con Los Permisos Para Ver Esta Pagina</div>
+        <div class="button-place">
+            <a href="@Troncoso.Security.AuthorizeRolesAttribute.Nodo()/Usuario/Index">Regresar</a>
+
+        </div>
+    </div>
+
+  
+</body>
+
+</html>

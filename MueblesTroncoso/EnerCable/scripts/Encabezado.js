@@ -1,0 +1,11 @@
+﻿var _encabezado = "http://http://172.10.1.1/Reporte";
+var _encabezado = "";
+var _accion = "/Usuario/agregarUsuario/";
+var _accionGrid = "/Usuario/ObtenerUsuarios";
+var datosView = { txtNombre: "", txtApellido: "" };
+var datosInsercion = [];
+var objetoInsertar;
+var datosAccion = {datos:objetoInsertar};
+var datosGrid;
+var columnasGrid;
+var $nuevo = 1;

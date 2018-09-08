@@ -1,0 +1,228 @@
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\ApplicationInsights.config
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\csc.exe
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\vbc.exe
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\VBCSCompiler.exe
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\EnerCable.dll.config
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\EnerCable.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\EnerCable.pdb
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Antlr3.Runtime.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.Web.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.ApplicationInsights.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Newtonsoft.Json.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Helpers.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Mvc.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Optimization.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Razor.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Webpages.Deployment.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Webpages.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Webpages.Razor.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\WebGrease.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Antlr3.Runtime.pdb
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.Web.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.ApplicationInsights.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\Newtonsoft.Json.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Optimization.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Razor.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Webpages.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Webpages.Deployment.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Webpages.Razor.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Helpers.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\System.Web.Mvc.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\obj\Debug\EnerCable.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\obj\Debug\EnerCable.pdb
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\obj\Debug\EnerCable.csprojResolveAssemblyReference.cache
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\EntityFramework.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\EntityFramework.SqlServer.dll
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\EntityFramework.xml
+C:\Users\hp\documents\visual studio 2015\Projects\EnerCable\EnerCable\bin\EntityFramework.SqlServer.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\ApplicationInsights.config
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\csc.exe
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\vbc.exe
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\VBCSCompiler.exe
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\EnerCable.dll.config
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\EnerCable.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\EnerCable.pdb
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Antlr3.Runtime.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\EntityFramework.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\EntityFramework.SqlServer.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.Web.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.ApplicationInsights.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Newtonsoft.Json.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Helpers.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Mvc.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Optimization.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Razor.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Deployment.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Razor.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\WebGrease.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Antlr3.Runtime.pdb
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\EntityFramework.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\EntityFramework.SqlServer.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.Web.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.ApplicationInsights.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\Newtonsoft.Json.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Optimization.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Razor.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Deployment.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Razor.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Helpers.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\bin\System.Web.Mvc.xml
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\obj\Debug\EnerCable.csprojResolveAssemblyReference.cache
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\obj\Debug\EnerCable.csproj.CoreCompileInputs.cache
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\obj\Debug\EnerCable.dll
+C:\Users\hp pavillion\Dropbox\EnerCable\EnerCable\obj\Debug\EnerCable.pdb
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\ApplicationInsights.config
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\csc.exe
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\vbc.exe
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\VBCSCompiler.exe
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\EnerCable.dll.config
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\EnerCable.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\EnerCable.pdb
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Antlr3.Runtime.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\EntityFramework.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\EntityFramework.SqlServer.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.Web.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.ApplicationInsights.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Newtonsoft.Json.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Helpers.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Mvc.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Optimization.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Razor.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Deployment.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Razor.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\WebGrease.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Antlr3.Runtime.pdb
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\EntityFramework.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\EntityFramework.SqlServer.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.Web.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.ApplicationInsights.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\Newtonsoft.Json.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Optimization.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Razor.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Deployment.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Razor.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Helpers.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\bin\System.Web.Mvc.xml
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\obj\Debug\EnerCable.dll
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\obj\Debug\EnerCable.pdb
+C:\Users\jgarcia\Dropbox\EnerCable\EnerCable\obj\Debug\EnerCable.csprojResolveAssemblyReference.cache
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\ApplicationInsights.config
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\csc.exe
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\vbc.exe
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\VBCSCompiler.exe
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\EnerCable.dll.config
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\EnerCable.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\EnerCable.pdb
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Antlr3.Runtime.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\EntityFramework.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\EntityFramework.SqlServer.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.Web.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.ApplicationInsights.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Newtonsoft.Json.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Helpers.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Mvc.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Optimization.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Razor.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Deployment.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Razor.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\WebGrease.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Antlr3.Runtime.pdb
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\EntityFramework.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\EntityFramework.SqlServer.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.Web.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.ApplicationInsights.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\Newtonsoft.Json.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Optimization.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Razor.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Deployment.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Webpages.Razor.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Helpers.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\bin\System.Web.Mvc.xml
+C:\Users\hp\Dropbox\EnerCable\EnerCable\obj\Debug\EnerCable.dll
+C:\Users\hp\Dropbox\EnerCable\EnerCable\obj\Debug\EnerCable.pdb

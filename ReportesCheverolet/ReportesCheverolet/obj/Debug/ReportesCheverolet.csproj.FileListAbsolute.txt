@@ -1,0 +1,14 @@
+c:\users\hp\documents\visual studio 2010\Projects\ReportesCheverolet\ReportesCheverolet\bin\ReportesCheverolet.dll
+c:\users\hp\documents\visual studio 2010\Projects\ReportesCheverolet\ReportesCheverolet\bin\ReportesCheverolet.pdb
+c:\users\hp\documents\visual studio 2010\Projects\ReportesCheverolet\ReportesCheverolet\obj\Debug\ReportesCheverolet.csprojResolveAssemblyReference.cache
+c:\users\hp\documents\visual studio 2010\Projects\ReportesCheverolet\ReportesCheverolet\obj\Debug\RdlCompile.cache
+c:\users\hp\documents\visual studio 2010\Projects\ReportesCheverolet\ReportesCheverolet\obj\Debug\RdlCompile.compiled
+c:\users\hp\documents\visual studio 2010\Projects\ReportesCheverolet\ReportesCheverolet\obj\Debug\ReportesCheverolet.dll
+c:\users\hp\documents\visual studio 2010\Projects\ReportesCheverolet\ReportesCheverolet\obj\Debug\ReportesCheverolet.pdb
+C:\Users\hp\Dropbox\proyectoChevrolet\ReportesCheverolet\ReportesCheverolet\obj\Debug\ReportesCheverolet.csprojResolveAssemblyReference.cache
+C:\Users\hp\Dropbox\proyectoChevrolet\ReportesCheverolet\ReportesCheverolet\obj\Debug\RdlCompile.cache
+C:\Users\hp\Dropbox\proyectoChevrolet\ReportesCheverolet\ReportesCheverolet\obj\Debug\RdlCompile.compiled
+C:\Users\hp\Dropbox\proyectoChevrolet\ReportesCheverolet\ReportesCheverolet\obj\Debug\ReportesCheverolet.dll
+C:\Users\hp\Dropbox\proyectoChevrolet\ReportesCheverolet\ReportesCheverolet\obj\Debug\ReportesCheverolet.pdb
+C:\Users\hp\Dropbox\proyectoChevrolet\ReportesCheverolet\ReportesCheverolet\bin\ReportesCheverolet.dll
+C:\Users\hp\Dropbox\proyectoChevrolet\ReportesCheverolet\ReportesCheverolet\bin\ReportesCheverolet.pdb

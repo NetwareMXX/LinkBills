@@ -1,0 +1,379 @@
+﻿
+@{
+    ViewBag.Title = "Costos";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<h2>Costos</h2>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="~/scripts/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" />
+<script src="~/scripts/plugins/jquery-datatable/jquery.dataTables.js"></script>
+<script src="~/scripts/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+<script src="~/scripts/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+<script src="~/scripts/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+<script src="~/scripts/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+<script src="~/scripts/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+<script src="~/scripts/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+<script src="~/scripts/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+<script src="~/scripts/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/scripts/Costo/Operaciones.js")
+    @Scripts.Render("~/scripts/Costo/Registrar.js")
+
+    <!-- Jquery DataTable Plugin Js -->
+
+}
+
+<div id="view" class="card">
+    <div class="header">
+
+
+        <ul class="header-dropdown m-r--5">
+
+            <li class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">more_vert</i>
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li><a id="aCapturar" href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">screen_rotation</i>Capturar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">save</i>Guardar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">cancel</i>Cancelar</a></li>
+                    @*<li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">delete</i>Eliminar</a></li>*@
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="body">
+        <div class="row clearfix">
+            <div>
+                <div class="panel-group" id="accordion_11" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-col-red">
+                        <div class="panel-heading" role="tab" id="headingOne_11">
+                            <h4 class="panel-title">
+                                <a id="aPanel" role="button" data-toggle="collapse" data-parent="#accordion_11" href="#collapseOne_11" aria-expanded="true" aria-controls="collapseOne_11">
+                                    Buscar Movimientos
+                                </a>
+
+                            </h4>
+
+
+                        </div>
+
+                        <div id="collapseOne_11" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_11">
+                            <div class="panel-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <form>
+
+                                        <div class="row clearfix">
+                                            <div class="col-sm-3">
+                                                <label for="ddlMes">Mes</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+
+                                                        <select id="ddlMes" class="combo form-control show-tick">
+
+                                                            @{
+                                                                var _mes = System.DateTime.Now.Month;
+                                                                var _nmes = "";
+                                                                for (var i = 1; i <= 12; i++)
+                                                                {
+                                                                    switch (i)
+                                                                    {
+                                                                        case 1: _nmes = "Enero"; break;
+                                                                        case 2: _nmes = "Febrero"; break;
+                                                                        case 3: _nmes = "Marzo"; break;
+                                                                        case 4: _nmes = "Abril"; break;
+                                                                        case 5: _nmes = "Mayo"; break;
+                                                                        case 6: _nmes = "Junio"; break;
+                                                                        case 7: _nmes = "Julio"; break;
+                                                                        case 8: _nmes = "Agosto"; break;
+                                                                        case 9: _nmes = "Septiembre"; break;
+                                                                        case 10: _nmes = "Octubre"; break;
+                                                                        case 11: _nmes = "Noviembre"; break;
+                                                                        case 12: _nmes = "Diciembre"; break;
+                                                                    }
+                                                                    <option value="@i" @(_mes == i ? "selected='selected'" : "")>@_nmes</option>
+                                                                }
+
+
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="divProgreso" style="display:none" class="row clear-fix">
+                                            <div class="col-md-12">
+                                                <div class="progress-bar bg-cyan progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                                                    CARGANDO TABLA
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row clearfix">
+                                            <div class="col-md-2">
+                                                <button v-on:click="guardar" type="button" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">search</i>
+                                                    <span>Buscar</span>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button v-on:click="cancelar" type="button" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">cancel</i>
+                                                    <span>Cancelar</span>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel panel-col-red">
+                        <div class="panel-heading" role="tab" id="headingOne_12">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_11" href="#collapseTwo_1" aria-expanded="false" aria-controls="collapseTwo_1">
+                                    Buscar Facturas
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo_1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_1">
+                            <div class="panel-body">
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <form>
+                                        <div class="row clearfix">
+                                            <div class="col-sm-3">
+                                                <label for="ddlTabla">Tabla</label>
+                                                @Html.DropDownList("ddlTabla", (IEnumerable
+
+                                            <SelectListItem>)ViewBag.Tablas, new { @class = "combo form-control show-tick" })
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <label for="ddlTipoPoliza">Tipo Poliza</label>
+                                                @Html.DropDownList("ddlTipoPoliza", (IEnumerable
+
+                                            <SelectListItem>)ViewBag.Polizas, new { @class = "combo form-control show-tick", @multiple = "multiple" })
+                                            </div>
+                                        </div>
+
+                                        <div class="row clear-fix">
+
+                                            <div class="col-sm-4">
+                                                <button type="button" onclick="return porSerie();" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">search</i>
+                                                    <span>Buscar Facturas en Otras Pólizas por Serie</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <button type="button" onclick="return porFactura();" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">search</i>
+                                                    <span>Buscar Serie en Otras Pólizas por Factura</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <h2 class="divFiltro" style="display:none">Filtros Para Facturas</h2>
+                                        <br />
+                                        <div class="row clear-fix">
+                                            <div class="col-sm-4 divFiltro" style="display:none">
+                                                <label for="txtFiltro">
+                                                    Filtrar por MOV_TIPOPOL
+                                                </label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input id="txtFiltro" class="form-control" placeholder="Ingrese El Movimiento Tipo Pol" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 divFiltro" style="display:none">
+                                                <label for="ddlFiltroSerie">Con Correcion en Serie</label>
+                                                <select id="ddlFiltroSerie" class="combo form-control show-tick">
+                                                    <option selected="selected" value="">Todos</option>
+                                                    <option value="SI">Si</option>
+                                                    <option value="NO">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-4 divFiltro" style="display:none">
+                                                <label for="ddlFiltroFactura">Con Correcion en Factura</label>
+                                                <select id="ddlFiltroFactura" class="combo form-control show-tick">
+                                                    <option selected="selected" value="">Todos</option>
+                                                    <option value="SI">Si</option>
+                                                    <option value="NO">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row clear-fix">
+
+                                            <div class="col-sm-4 divFiltro" style="display:none">
+                                                <button type="button" onclick="return removerPorSerie(1,0);" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">delete</i>
+                                                    <span>Remover Correciones por Serie</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="col-sm-4 divFiltro" style="display:none">
+                                                <button type="button" onclick="return removerPorSerie(0,1);" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">delete</i>
+                                                    <span>Remover Correciones por Factura</span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+                                </div>
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="row clearfix">
+            <div id="tablaMenu" class="col-md-12 table-responsive">
+
+
+
+            </div>
+        </div>
+
+
+
+
+        <div id="window" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="divProgresoFacturas" class="row clear-fix">
+                <div class="col-md-12">
+                    <div class="progress-bar bg-cyan progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                        BUSCANDO FACTURAS
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="window2" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+            <div class="row clearfix">
+
+
+                <div class="col-sm-8">
+                    <label id="lblCapturaCorregir" for="txtCapturaCorregir">Nombre</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="txtCapturaCorregir" class="form-control" type="text">
+                            <input type="hidden" id="hdFactura" value="0" />
+                            <input type="hidden" id="hdIdMovimiento" value="0" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row clearfix">
+
+
+                <div class="col-sm-4">
+                    <label  for="txtMovTipoPol">MOV_TIPOPOL</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="txtMovTipoPol" readonly="readonly" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <label for="txtConsPol">MOV_CONSPOL</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="txtConsPol" readonly="readonly" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row clearfix">
+
+
+                <div class="col-sm-4">
+                    <label for="txtConsMov">MOV_CONSMOV</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="txtConsMov" readonly="readonly" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <label for="txtMovMes">MOV_MES</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="txtMovMes" class="form-control" readonly="readonly" type="text">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="divprogressGuardarxx" style="display:none" class="row clear-fix">
+                <div class="col-md-12">
+                    <div   class="progress-bar bg-cyan progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                        GUARDANDO
+                    </div>
+
+                </div>
+            </div>
+            <div class="row clear-fix">
+
+                <div class="col-sm-4">
+                    <button type="button" onclick="return cerrarVentanaCorregir();" class="btn bg-red waves-effect btnCorregir">
+                        <i class="material-icons">cancel</i>
+                        <span>Cancelar</span>
+                    </button>
+                </div>
+
+                <div class="col-sm-4">
+                    <button type="button" onclick="return corregirGuardar();" class="btn bg-red waves-effect btnCorregir">
+                        <i class="material-icons">save</i>
+                        <span>Guardar</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</div>

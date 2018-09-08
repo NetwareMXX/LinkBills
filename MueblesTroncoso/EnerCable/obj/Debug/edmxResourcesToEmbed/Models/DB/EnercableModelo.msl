@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EnercableBDStoreContainer" CdmEntityContainer="EnercableConexion">
+    <FunctionImportMapping FunctionImportName="GuardarBitacora" FunctionName="EnercableBD.Store.GuardarBitacora" />
+    <FunctionImportMapping FunctionImportName="CrearSesion" FunctionName="EnercableBD.Store.CrearSesion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EnercableBD.CrearSesion_Result">
+          <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="EliminarPermisoPerfil" FunctionName="EnercableBD.Store.EliminarPermisoPerfil" />
+    <FunctionImportMapping FunctionImportName="GuardarPerfil" FunctionName="EnercableBD.Store.GuardarPerfil" />
+    <FunctionImportMapping FunctionImportName="GuardarPermisoPerfil" FunctionName="EnercableBD.Store.GuardarPermisoPerfil" />
+    <FunctionImportMapping FunctionImportName="GuardarUsuario" FunctionName="EnercableBD.Store.GuardarUsuario" />
+    <FunctionImportMapping FunctionImportName="DividirCadena" FunctionName="EnercableBD.Store.DividirCadena" />
+    <FunctionImportMapping FunctionImportName="BuscarPedidosFacturados" FunctionName="EnercableBD.Store.BuscarPedidosFacturados" />
+    <FunctionImportMapping FunctionImportName="RegresaDatosClienteFactura" FunctionName="EnercableBD.Store.RegresaDatosClienteFactura">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EnercableBD.RegresaDatosClienteFactura_Result">
+          <ScalarProperty Name="IdClienteFactura" ColumnName="IdClienteFactura" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="DelegacionMunicipio" ColumnName="DelegacionMunicipio" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RegresaDetallePorPedido" FunctionName="EnercableBD.Store.RegresaDetallePorPedido">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EnercableBD.RegresaDetallePorPedido_Result">
+          <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+          <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
+          <ScalarProperty Name="ClaveArticulo" ColumnName="ClaveArticulo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="IdTienda" ColumnName="IdTienda" />
+          <ScalarProperty Name="TotalDescuento" ColumnName="TotalDescuento" />
+          <ScalarProperty Name="DescuentoPorPieza" ColumnName="DescuentoPorPieza" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Bitacoras">
+      <EntityTypeMapping TypeName="EnercableBD.Bitacoras">
+        <MappingFragment StoreEntitySet="Bitacoras">
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdBitacora" ColumnName="IdBitacora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cabeceras">
+      <EntityTypeMapping TypeName="EnercableBD.Cabeceras">
+        <MappingFragment StoreEntitySet="Cabeceras">
+          <ScalarProperty Name="Icono" ColumnName="Icono" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdCabecera" ColumnName="IdCabecera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estatus">
+      <EntityTypeMapping TypeName="EnercableBD.Estatus">
+        <MappingFragment StoreEntitySet="Estatus">
+          <ScalarProperty Name="Estatus1" ColumnName="Estatus" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modulos">
+      <EntityTypeMapping TypeName="EnercableBD.Modulos">
+        <MappingFragment StoreEntitySet="Modulos">
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Icono" ColumnName="Icono" />
+          <ScalarProperty Name="IdCabecera" ColumnName="IdCabecera" />
+          <ScalarProperty Name="Modulo" ColumnName="Modulo" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotasDeCredito">
+      <EntityTypeMapping TypeName="EnercableBD.NotasDeCredito">
+        <MappingFragment StoreEntitySet="NotasDeCredito">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Iva" ColumnName="Iva" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="NotaDeCredito" ColumnName="NotaDeCredito" />
+          <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+          <ScalarProperty Name="IdNotaDeCredito" ColumnName="IdNotaDeCredito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perfiles">
+      <EntityTypeMapping TypeName="EnercableBD.Perfiles">
+        <MappingFragment StoreEntitySet="Perfiles">
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermisosPerfiles">
+      <EntityTypeMapping TypeName="EnercableBD.PermisosPerfiles">
+        <MappingFragment StoreEntitySet="PermisosPerfiles">
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+          <ScalarProperty Name="IdPermisoPerfil" ColumnName="IdPermisoPerfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sesiones">
+      <EntityTypeMapping TypeName="EnercableBD.Sesiones">
+        <MappingFragment StoreEntitySet="Sesiones">
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="EnercableBD.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Materno" ColumnName="Materno" />
+          <ScalarProperty Name="Paterno" ColumnName="Paterno" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwArticulos">
+      <EntityTypeMapping TypeName="EnercableBD.vwArticulos">
+        <MappingFragment StoreEntitySet="vwArticulos">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ClaveArticulo" ColumnName="ClaveArticulo" />
+          <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwClientesFacturas">
+      <EntityTypeMapping TypeName="EnercableBD.vwClientesFacturas">
+        <MappingFragment StoreEntitySet="vwClientesFacturas">
+          <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="DelegacionMunicipio" ColumnName="DelegacionMunicipio" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+          <ScalarProperty Name="NumeroInterior" ColumnName="NumeroInterior" />
+          <ScalarProperty Name="NumeroExterior" ColumnName="NumeroExterior" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="IdClienteFactura" ColumnName="IdClienteFactura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwDetallesPedidos">
+      <EntityTypeMapping TypeName="EnercableBD.vwDetallesPedidos">
+        <MappingFragment StoreEntitySet="vwDetallesPedidos">
+          <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+          <ScalarProperty Name="CantidadEntregada" ColumnName="CantidadEntregada" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Descuento2" ColumnName="Descuento2" />
+          <ScalarProperty Name="Descuento1" ColumnName="Descuento1" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+          <ScalarProperty Name="Consecutivo" ColumnName="Consecutivo" />
+          <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwPedidos">
+      <EntityTypeMapping TypeName="EnercableBD.vwPedidos">
+        <MappingFragment StoreEntitySet="vwPedidos">
+          <ScalarProperty Name="IdTienda" ColumnName="IdTienda" />
+          <ScalarProperty Name="IdEstatusEntrega" ColumnName="IdEstatusEntrega" />
+          <ScalarProperty Name="IdClienteFactura" ColumnName="IdClienteFactura" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="FechaPedido" ColumnName="FechaPedido" />
+          <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwPerfiles">
+      <EntityTypeMapping TypeName="EnercableBD.vwPerfiles">
+        <MappingFragment StoreEntitySet="vwPerfiles">
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwUsuarios">
+      <EntityTypeMapping TypeName="EnercableBD.vwUsuarios">
+        <MappingFragment StoreEntitySet="vwUsuarios">
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Materno" ColumnName="Materno" />
+          <ScalarProperty Name="Paterno" ColumnName="Paterno" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwPedidosFacturados">
+      <EntityTypeMapping TypeName="EnercableBD.vwPedidosFacturados">
+        <MappingFragment StoreEntitySet="vwPedidosFacturados">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="FechaPedido" ColumnName="FechaPedido" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="IdPedido" ColumnName="IdPedido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="BuscarPedidosFacturadosStored" FunctionName="EnercableBD.Store.BuscarPedidosFacturados" />
+  </EntityContainerMapping>
+</Mapping>

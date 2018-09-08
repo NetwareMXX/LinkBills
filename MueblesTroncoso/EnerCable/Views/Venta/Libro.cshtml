@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Libro";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<h2>Libro</h2>
+
+@section Scripts {
+    @Scripts.Render("~/scripts/Venta/Libro.js")
+
+
+    <!-- Jquery DataTable Plugin Js -->
+
+}
+<div id="view" class="card">
+    <div class="header">
+
+
+        <ul class="header-dropdown m-r--5">
+
+            <li class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">more_vert</i>
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li><a id="aCapturar" href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">screen_rotation</i>Capturar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">save</i>Guardar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">cancel</i>Cancelar</a></li>
+                    @*<li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">delete</i>Eliminar</a></li>*@
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="body">
+        <div class="row clearfix">
+            <div>
+                <div class="panel-group" id="accordion_11" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-col-red">
+                        <div class="panel-heading" role="tab" id="headingOne_11">
+                            <h4 class="panel-title">
+                                <a id="aPanel" role="button" data-toggle="collapse" data-parent="#accordion_11" href="#collapseOne_11" aria-expanded="true" aria-controls="collapseOne_11">
+                                    Mostrar Libro
+                                </a>
+
+                            </h4>
+
+
+                        </div>
+
+                        <div id="collapseOne_11" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_11">
+                            <div class="panel-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <form>
+
+                                        <div class="row clearfix">
+                                            <div class="col-sm-3">
+                                                <label for="ddlMes">Mes</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="hidden" value="@ViewBag.IdUsuario" id="hdIdUsuario" />
+                                                        <select id="ddlMes" class="combo form-control show-tick">
+
+                                                            @{
+                                                                var _mes = System.DateTime.Now.Month;
+                                                                var _nmes = "";
+                                                                for (var i = 1; i <= 12; i++)
+                                                                {
+                                                                    switch (i)
+                                                                    {
+                                                                        case 1: _nmes = "Enero"; break;
+                                                                        case 2: _nmes = "Febrero"; break;
+                                                                        case 3: _nmes = "Marzo"; break;
+                                                                        case 4: _nmes = "Abril"; break;
+                                                                        case 5: _nmes = "Mayo"; break;
+                                                                        case 6: _nmes = "Junio"; break;
+                                                                        case 7: _nmes = "Julio"; break;
+                                                                        case 8: _nmes = "Agosto"; break;
+                                                                        case 9: _nmes = "Septiembre"; break;
+                                                                        case 10: _nmes = "Octubre"; break;
+                                                                        case 11: _nmes = "Noviembre"; break;
+                                                                        case 12: _nmes = "Diciembre"; break;
+                                                                    }
+                                                                    <option value="@i" @(_mes == i ? "selected='selected'" : "")>@_nmes</option>
+                                                                }
+
+
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row clearfix">
+                                            <div class="col-md-2">
+                                                <button v-on:click="guardar" type="button" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">search</i>
+                                                    <span>Buscar</span>
+                                                </button>
+                                            </div>
+
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+
+
+            <iframe id="Contenido" class="col-md-12" style="height:600px;"  frameborder="0"></iframe>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Estatus";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<h2>Configuracion Orden Ser</h2>
+@section Scripts {
+    @Scripts.Render("~/scripts/Operaciones.js")
+    @Scripts.Render("~/scripts/ConfOrdenSer/Registrar.js")
+
+
+}
+
+
+<div id="view" class="card">
+    <div class="header">
+        <h2>Consulta Configuracion Orden Ser</h2>
+
+        <ul class="header-dropdown m-r--5">
+
+            <li class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">more_vert</i>
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li><a id="aCapturar" href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">screen_rotation</i>Capturar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">save</i>Guardar</a></li>
+                    <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">cancel</i>Cancelar</a></li>
+                    @*<li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">delete</i>Eliminar</a></li>*@
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="body">
+
+        <div class="row clearfix">
+            <div>
+                <div class="panel-group" id="accordion_11" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-col-red">
+                        <div class="panel-heading" role="tab" id="headingOne_11">
+                            <h4 class="panel-title">
+                                <a id="aPanel" role="button" data-toggle="collapse" data-parent="#accordion_11" href="#collapseOne_11" aria-expanded="false" aria-controls="collapseOne_11" class="collapsed">
+                                     Información de Configuracion Orden Ser
+                                </a>
+
+                            </h4>
+
+
+                        </div>
+                        <div id="collapseOne_11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne_11" aria-expanded="false">
+                            <div class="panel-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <form>
+                                        <div class="row clearfix">
+
+
+                                            <div class="col-sm-4">
+                                                <label for="txtProveedor">Longitud Serie</label>
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="hidden" value="0" id="hdIdEstatus" />
+                                                        <input id="txtEstatus" class="form-control" placeholder="Ingrese la Longitud" type="number">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
+                                        </div>
+
+
+                                        <div class="row clearfix" >
+                                            <div class="col-md-2" >
+                                                <button v-on:click="guardar" type="button" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">save</i>
+                                                    <span>Guardar</span>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button v-on:click="cancelar" type="button" class="btn bg-red waves-effect">
+                                                    <i class="material-icons">cancel</i>
+                                                    <span>Cancelar</span>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div id="miGrid" kendo-grid="miGrid" class="MyGrid" k-rebind="KendoCulture" options="mainGridOptions"></div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+

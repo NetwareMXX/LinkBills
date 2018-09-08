@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnercableBD" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EnercableConexion" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GuardarBitacora">
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="CrearSesion" ReturnType="Collection(EnercableBD.CrearSesion_Result)">
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Contraseña" Mode="In" Type="String" />
+      <Parameter Name="Ip" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="EliminarPermisoPerfil">
+      <Parameter Name="IdPermisoPerfil" Mode="In" Type="Int32" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarPerfil">
+      <Parameter Name="IdPerfil" Mode="In" Type="Int32" />
+      <Parameter Name="IdEstatus" Mode="In" Type="Int32" />
+      <Parameter Name="Perfil" Mode="In" Type="String" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarPermisoPerfil">
+      <Parameter Name="IdModulo" Mode="In" Type="Int32" />
+      <Parameter Name="IdPerfil" Mode="In" Type="Int32" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarUsuario">
+      <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="IdPerfil" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Paterno" Mode="In" Type="String" />
+      <Parameter Name="Materno" Mode="In" Type="String" />
+      <Parameter Name="Correo" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="IdEstatus" Mode="In" Type="Int32" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="DividirCadena" IsComposable="true" ReturnType="Collection(String)">
+      <Parameter Name="Cadena" Mode="In" Type="String" />
+      <Parameter Name="Divisor" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarFolio">
+      <Parameter Name="IdFolio" Mode="In" Type="Int32" />
+      <Parameter Name="Folio" Mode="In" Type="String" />
+      <Parameter Name="Ciudad" Mode="In" Type="String" />
+      <Parameter Name="Estado" Mode="In" Type="String" />
+      <Parameter Name="Cluster" Mode="In" Type="String" />
+      <Parameter Name="OLT" Mode="In" Type="String" />
+      <Parameter Name="ClientesAfectados" Mode="In" Type="String" />
+      <Parameter Name="FallaReportada" Mode="In" Type="String" />
+      <Parameter Name="FechaYHoraDeAsignacionDespacho" Mode="In" Type="String" />
+      <Parameter Name="FechaYHoraDeAsignacionProvista" Mode="In" Type="String" />
+      <Parameter Name="HoraDeLlegadaALaZona" Mode="In" Type="String" />
+      <Parameter Name="HoraDeLaPrimeraMedicion" Mode="In" Type="String" />
+      <Parameter Name="UbicacionDePrimerSegundoNivelYDerivacionConSusFibras" Mode="In" Type="String" />
+      <Parameter Name="CausaDelDano" Mode="In" Type="String" />
+      <Parameter Name="UbicacionDelDano" Mode="In" Type="String" />
+      <Parameter Name="CoordenadasDelDanoX" Mode="In" Type="String" />
+      <Parameter Name="CoordenadasDelDanoY" Mode="In" Type="String" />
+      <Parameter Name="DescripcionDeActividades" Mode="In" Type="String" />
+      <Parameter Name="PotencialInicia" Mode="In" Type="String" />
+      <Parameter Name="PotencialFinal" Mode="In" Type="String" />
+      <Parameter Name="FechaHoraFinalReparacion" Mode="In" Type="String" />
+      <Parameter Name="IdPersona_TecnicoAtiende" Mode="In" Type="Int32" />
+      <Parameter Name="IdProveedor" Mode="In" Type="Int32" />
+      <Parameter Name="IdPersona_Supervisor" Mode="In" Type="Int32" />
+      <Parameter Name="IdPersona_AtendioDespacho" Mode="In" Type="Int32" />
+      <Parameter Name="JustificacionDeSLA" Mode="In" Type="String" />
+      <Parameter Name="ActualizarTrabajosRealizados" Mode="In" Type="Boolean" />
+      <Parameter Name="TrabajosRealizados" Mode="In" Type="String" />
+      <Parameter Name="ActualizarCordenadasCab24" Mode="In" Type="Boolean" />
+      <Parameter Name="CordenadasCab24" Mode="In" Type="String" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarCargo">
+      <Parameter Name="IdCargo" Mode="In" Type="Int32" />
+      <Parameter Name="Cargo" Mode="In" Type="String" />
+      <Parameter Name="IdEstatus" Mode="In" Type="Int32" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarCargoPersona">
+      <Parameter Name="IdCargos" Mode="In" Type="String" />
+      <Parameter Name="IdPersona" Mode="In" Type="Int32" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarPersona">
+      <Parameter Name="IdPersona" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Paterno" Mode="In" Type="String" />
+      <Parameter Name="Materno" Mode="In" Type="String" />
+      <Parameter Name="IdEstatus" Mode="In" Type="Int32" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarProveedor">
+      <Parameter Name="IdProveedor" Mode="In" Type="Int32" />
+      <Parameter Name="Proveedor" Mode="In" Type="String" />
+      <Parameter Name="IdEstatus" Mode="In" Type="Int32" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarServicio">
+      <Parameter Name="IdServicio" Mode="In" Type="Int32" />
+      <Parameter Name="Clave" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="IdUnidad" Mode="In" Type="Int32" />
+      <Parameter Name="PrecioUnitario" Mode="In" Type="Decimal" />
+      <Parameter Name="IdEstatus" Mode="In" Type="Int32" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GuardarUnidad">
+      <Parameter Name="IdUnidad" Mode="In" Type="Int32" />
+      <Parameter Name="Unidad" Mode="In" Type="String" />
+      <Parameter Name="IdEstatus" Mode="In" Type="Int32" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="BuscarPedidosFacturados">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="FechaInicial" Mode="In" Type="String" />
+      <Parameter Name="FechaFinal" Mode="In" Type="String" />
+      <Parameter Name="Folio" Mode="In" Type="String" />
+      <Parameter Name="Cliente" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RegresaDatosClienteFactura" ReturnType="Collection(EnercableBD.RegresaDatosClienteFactura_Result)">
+      <Parameter Name="IdPedido" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RegresaDetallePorPedido" ReturnType="Collection(EnercableBD.RegresaDetallePorPedido_Result)">
+      <Parameter Name="IdPedido" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Bitacoras" EntityType="EnercableBD.Bitacoras" />
+    <EntitySet Name="Cabeceras" EntityType="EnercableBD.Cabeceras" />
+    <EntitySet Name="Estatus" EntityType="EnercableBD.Estatus" />
+    <EntitySet Name="Modulos" EntityType="EnercableBD.Modulos" />
+    <EntitySet Name="NotasDeCredito" EntityType="EnercableBD.NotasDeCredito" />
+    <EntitySet Name="Perfiles" EntityType="EnercableBD.Perfiles" />
+    <EntitySet Name="PermisosPerfiles" EntityType="EnercableBD.PermisosPerfiles" />
+    <EntitySet Name="Sesiones" EntityType="EnercableBD.Sesiones" />
+    <EntitySet Name="Usuarios" EntityType="EnercableBD.Usuarios" />
+    <EntitySet Name="vwArticulos" EntityType="EnercableBD.vwArticulos" />
+    <EntitySet Name="vwClientesFacturas" EntityType="EnercableBD.vwClientesFacturas" />
+    <EntitySet Name="vwDetallesPedidos" EntityType="EnercableBD.vwDetallesPedidos" />
+    <EntitySet Name="vwPedidos" EntityType="EnercableBD.vwPedidos" />
+    <EntitySet Name="vwPerfiles" EntityType="EnercableBD.vwPerfiles" />
+    <EntitySet Name="vwUsuarios" EntityType="EnercableBD.vwUsuarios" />
+    <EntitySet Name="vwPedidosFacturados" EntityType="EnercableBD.vwPedidosFacturados" />
+    <FunctionImport Name="BuscarPedidosFacturadosStored" EntitySet="vwPedidosFacturados" ReturnType="Collection(EnercableBD.vwPedidosFacturados)">
+      <Parameter Name="TipoBusqueda" Mode="In" Type="Int32" />
+      <Parameter Name="FechaInicial" Mode="In" Type="String" />
+      <Parameter Name="FechaFinal" Mode="In" Type="String" />
+      <Parameter Name="Folio" Mode="In" Type="String" />
+      <Parameter Name="Cliente" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="CrearSesion_Result">
+    <Property Type="String" Name="Resultado" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="IdSesion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="RegresaDatosClienteFactura_Result">
+    <Property Type="String" Name="IdClienteFactura" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Cliente" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Calle" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Colonia" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CP" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="DelegacionMunicipio" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Estado" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Pais" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RFC" Nullable="false" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="RegresaDetallePorPedido_Result">
+    <Property Type="Int32" Name="IdPedido" Nullable="false" />
+    <Property Type="Int32" Name="Consecutivo" Nullable="false" />
+    <Property Type="String" Name="ClaveArticulo" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Cantidad" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Unidad" Nullable="false" MaxLength="3" />
+    <Property Type="Decimal" Name="PrecioUnitario" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SubTotal" Nullable="true" Precision="20" Scale="2" />
+    <Property Type="Int32" Name="IdTienda" Nullable="false" />
+    <Property Type="Decimal" Name="TotalDescuento" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="DescuentoPorPieza" Nullable="true" Precision="38" Scale="19" />
+  </ComplexType>
+  <EntityType Name="Bitacoras">
+    <Key>
+      <PropertyRef Name="IdBitacora" />
+    </Key>
+    <Property Name="IdBitacora" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="Accion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Cabeceras">
+    <Key>
+      <PropertyRef Name="IdCabecera" />
+    </Key>
+    <Property Name="IdCabecera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Icono" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Estatus">
+    <Key>
+      <PropertyRef Name="IdEstatus" />
+    </Key>
+    <Property Name="IdEstatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Estatus1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Modulo" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IdCabecera" Type="Int32" Nullable="false" />
+    <Property Name="Icono" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NotasDeCredito">
+    <Key>
+      <PropertyRef Name="IdNotaDeCredito" />
+    </Key>
+    <Property Name="IdNotaDeCredito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPedido" Type="Int32" Nullable="false" />
+    <Property Name="NotaDeCredito" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Folio" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Serie" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Iva" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Perfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+    </Key>
+    <Property Name="IdPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Perfil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdEstatus" Type="Int32" Nullable="false" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="PermisosPerfiles">
+    <Key>
+      <PropertyRef Name="IdPermisoPerfil" />
+    </Key>
+    <Property Name="IdPermisoPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdModulo" Type="Int32" Nullable="false" />
+    <Property Name="IdPerfil" Type="Int32" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sesiones">
+    <Key>
+      <PropertyRef Name="IdSesion" />
+    </Key>
+    <Property Name="IdSesion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Ip" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdPerfil" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdEstatus" Type="Int32" Nullable="false" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vwArticulos">
+    <Key>
+      <PropertyRef Name="IdArticulo" />
+      <PropertyRef Name="ClaveArticulo" />
+      <PropertyRef Name="Descripcion" />
+    </Key>
+    <Property Name="IdArticulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaveArticulo" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vwClientesFacturas">
+    <Key>
+      <PropertyRef Name="IdClienteFactura" />
+      <PropertyRef Name="RFC" />
+    </Key>
+    <Property Name="IdClienteFactura" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Cliente" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RFC" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Calle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroExterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroInterior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Colonia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Ciudad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DelegacionMunicipio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Referencia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vwDetallesPedidos">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+      <PropertyRef Name="Consecutivo" />
+      <PropertyRef Name="IdArticulo" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="PrecioUnitario" />
+      <PropertyRef Name="Descuento1" />
+      <PropertyRef Name="Descuento2" />
+      <PropertyRef Name="Importe" />
+      <PropertyRef Name="Unidad" />
+    </Key>
+    <Property Name="IdPedido" Type="Int32" Nullable="false" />
+    <Property Name="Consecutivo" Type="Int32" Nullable="false" />
+    <Property Name="IdArticulo" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="PrecioUnitario" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Descuento1" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Descuento2" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Importe" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CantidadEntregada" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Unidad" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vwPedidos">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+      <PropertyRef Name="FechaPedido" />
+      <PropertyRef Name="IdTienda" />
+    </Key>
+    <Property Name="IdPedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaPedido" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Folio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IdClienteFactura" Type="Int32" />
+    <Property Name="IdEstatusEntrega" Type="Int16" />
+    <Property Name="IdTienda" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vwPerfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+      <PropertyRef Name="Perfil" />
+      <PropertyRef Name="IdEstatus" />
+      <PropertyRef Name="IdSesion" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="Estatus" />
+    </Key>
+    <Property Name="IdPerfil" Type="Int32" Nullable="false" />
+    <Property Name="Perfil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdEstatus" Type="Int32" Nullable="false" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Estatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwUsuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="IdPerfil" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="IdEstatus" />
+      <PropertyRef Name="IdSesion" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="Perfil" />
+      <PropertyRef Name="Estatus" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdPerfil" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdEstatus" Type="Int32" Nullable="false" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Perfil" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Estatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwPedidosFacturados">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+      <PropertyRef Name="FechaPedido" />
+    </Key>
+    <Property Name="IdPedido" Type="Int32" Nullable="false" />
+    <Property Name="Cliente" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FechaPedido" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Folio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+</Schema>

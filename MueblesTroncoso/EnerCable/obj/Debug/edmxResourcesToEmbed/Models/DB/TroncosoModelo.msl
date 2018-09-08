@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TroncosoModeloStoreContainer" CdmEntityContainer="EnercableConexion">
+    <EntitySetMapping Name="Bitacoras">
+      <EntityTypeMapping TypeName="TroncosoModelo.Bitacoras">
+        <MappingFragment StoreEntitySet="Bitacoras">
+          <ScalarProperty Name="IdBitacora" ColumnName="IdBitacora" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cabeceras">
+      <EntityTypeMapping TypeName="TroncosoModelo.Cabeceras">
+        <MappingFragment StoreEntitySet="Cabeceras">
+          <ScalarProperty Name="IdCabecera" ColumnName="IdCabecera" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Icono" ColumnName="Icono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguracionOrdenSer">
+      <EntityTypeMapping TypeName="TroncosoModelo.ConfiguracionOrdenSer">
+        <MappingFragment StoreEntitySet="ConfiguracionOrdenSer">
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdConfiguracionOrdenSer" ColumnName="IdConfiguracionOrdenSer" />
+          <ScalarProperty Name="LongitudSerieEnSer_Orden" ColumnName="LongitudSerieEnSer_Orden" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguracionPolizas">
+      <EntityTypeMapping TypeName="TroncosoModelo.ConfiguracionPolizas">
+        <MappingFragment StoreEntitySet="ConfiguracionPolizas">
+          <ScalarProperty Name="IdConfiguracionPoliza" ColumnName="IdConfiguracionPoliza" />
+          <ScalarProperty Name="IdTipoDePoliza" ColumnName="IdTipoDePoliza" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="TipoConfiguracion" ColumnName="TipoConfiguracion" />
+          <ScalarProperty Name="TipoExtraccion" ColumnName="TipoExtraccion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorreccionMovimientos">
+      <EntityTypeMapping TypeName="TroncosoModelo.CorreccionMovimientos">
+        <MappingFragment StoreEntitySet="CorreccionMovimientos">
+          <ScalarProperty Name="IdCorreccionMovimiento" ColumnName="IdCorreccionMovimiento" />
+          <ScalarProperty Name="IdTabla" ColumnName="IdTabla" />
+          <ScalarProperty Name="MOV_CONSPOL" ColumnName="MOV_CONSPOL" />
+          <ScalarProperty Name="MOV_CONSMOV" ColumnName="MOV_CONSMOV" />
+          <ScalarProperty Name="MOV_MES" ColumnName="MOV_MES" />
+          <ScalarProperty Name="MOV_TIPOPOL" ColumnName="MOV_TIPOPOL" />
+          <ScalarProperty Name="AplicaFactura" ColumnName="AplicaFactura" />
+          <ScalarProperty Name="Factura" ColumnName="Factura" />
+          <ScalarProperty Name="AplicaSerie" ColumnName="AplicaSerie" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CuentasCostos">
+      <EntityTypeMapping TypeName="TroncosoModelo.CuentasCostos">
+        <MappingFragment StoreEntitySet="CuentasCostos">
+          <ScalarProperty Name="IdCuentaCosto" ColumnName="IdCuentaCosto" />
+          <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdTipoCuenta" ColumnName="IdTipoCuenta" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CuentasVentas">
+      <EntityTypeMapping TypeName="TroncosoModelo.CuentasVentas">
+        <MappingFragment StoreEntitySet="CuentasVentas">
+          <ScalarProperty Name="IdCuentaVenta" ColumnName="IdCuentaVenta" />
+          <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdTipoCuenta" ColumnName="IdTipoCuenta" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estatus">
+      <EntityTypeMapping TypeName="TroncosoModelo.Estatus">
+        <MappingFragment StoreEntitySet="Estatus">
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="Estatus1" ColumnName="Estatus" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modulos">
+      <EntityTypeMapping TypeName="TroncosoModelo.Modulos">
+        <MappingFragment StoreEntitySet="Modulos">
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+          <ScalarProperty Name="Modulo" ColumnName="Modulo" />
+          <ScalarProperty Name="IdCabecera" ColumnName="IdCabecera" />
+          <ScalarProperty Name="Icono" ColumnName="Icono" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perfiles">
+      <EntityTypeMapping TypeName="TroncosoModelo.Perfiles">
+        <MappingFragment StoreEntitySet="Perfiles">
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermisosPerfiles">
+      <EntityTypeMapping TypeName="TroncosoModelo.PermisosPerfiles">
+        <MappingFragment StoreEntitySet="PermisosPerfiles">
+          <ScalarProperty Name="IdPermisoPerfil" ColumnName="IdPermisoPerfil" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sesiones">
+      <EntityTypeMapping TypeName="TroncosoModelo.Sesiones">
+        <MappingFragment StoreEntitySet="Sesiones">
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tablas">
+      <EntityTypeMapping TypeName="TroncosoModelo.Tablas">
+        <MappingFragment StoreEntitySet="Tablas">
+          <ScalarProperty Name="IdTabla" ColumnName="IdTabla" />
+          <ScalarProperty Name="Tabla" ColumnName="Tabla" />
+          <ScalarProperty Name="Ejercicio" ColumnName="Ejercicio" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="TablaNCRBON" ColumnName="TablaNCRBON" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoCuentas">
+      <EntityTypeMapping TypeName="TroncosoModelo.TipoCuentas">
+        <MappingFragment StoreEntitySet="TipoCuentas">
+          <ScalarProperty Name="IdTipoCuenta" ColumnName="IdTipoCuenta" />
+          <ScalarProperty Name="TipoCuenta" ColumnName="TipoCuenta" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDocumentos">
+      <EntityTypeMapping TypeName="TroncosoModelo.TipoDocumentos">
+        <MappingFragment StoreEntitySet="TipoDocumentos">
+          <ScalarProperty Name="IdTipoDocumento" ColumnName="IdTipoDocumento" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposDePolizas">
+      <EntityTypeMapping TypeName="TroncosoModelo.TiposDePolizas">
+        <MappingFragment StoreEntitySet="TiposDePolizas">
+          <ScalarProperty Name="IdTipoDePoliza" ColumnName="IdTipoDePoliza" />
+          <ScalarProperty Name="TipoDePoliza" ColumnName="TipoDePoliza" />
+          <ScalarProperty Name="AplicaNombreCuenta" ColumnName="AplicaNombreCuenta" />
+          <ScalarProperty Name="AplicaCondicionNombreCuenta" ColumnName="AplicaCondicionNombreCuenta" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="TipoExtraccion" ColumnName="TipoExtraccion" />
+          <ScalarProperty Name="DatoValidar" ColumnName="DatoValidar" />
+          <ScalarProperty Name="Cate" ColumnName="Cate" />
+          <ScalarProperty Name="AplicaFacturaEnSerie" ColumnName="AplicaFacturaEnSerie" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="TroncosoModelo.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Paterno" ColumnName="Paterno" />
+          <ScalarProperty Name="Materno" ColumnName="Materno" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovimientosCostos">
+      <EntityTypeMapping TypeName="TroncosoModelo.MovimientosCostos">
+        <MappingFragment StoreEntitySet="MovimientosCostos">
+          <ScalarProperty Name="IdMovimientoCosto" ColumnName="IdMovimientoCosto" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Factura" ColumnName="Factura" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="Mov_TipoPol" ColumnName="Mov_TipoPol" />
+          <ScalarProperty Name="MOV_CONSPOL" ColumnName="MOV_CONSPOL" />
+          <ScalarProperty Name="MOV_CONSMOV" ColumnName="MOV_CONSMOV" />
+          <ScalarProperty Name="MOV_MES" ColumnName="MOV_MES" />
+          <ScalarProperty Name="MOV_NUMCTA" ColumnName="MOV_NUMCTA" />
+          <ScalarProperty Name="MOV_CONCEPTO" ColumnName="MOV_CONCEPTO" />
+          <ScalarProperty Name="MOV_DEBE" ColumnName="MOV_DEBE" />
+          <ScalarProperty Name="MOV_HABER" ColumnName="MOV_HABER" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Cate" ColumnName="Cate" />
+          <ScalarProperty Name="MOV_FECHOPE" ColumnName="MOV_FECHOPE" />
+          <ScalarProperty Name="MOV_HORAOPE" ColumnName="MOV_HORAOPE" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovimientosVentas">
+      <EntityTypeMapping TypeName="TroncosoModelo.MovimientosVentas">
+        <MappingFragment StoreEntitySet="MovimientosVentas">
+          <ScalarProperty Name="IdMovimientoVenta" ColumnName="IdMovimientoVenta" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Factura" ColumnName="Factura" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+          <ScalarProperty Name="Mov_TipoPol" ColumnName="Mov_TipoPol" />
+          <ScalarProperty Name="MOV_CONSPOL" ColumnName="MOV_CONSPOL" />
+          <ScalarProperty Name="MOV_CONSMOV" ColumnName="MOV_CONSMOV" />
+          <ScalarProperty Name="MOV_MES" ColumnName="MOV_MES" />
+          <ScalarProperty Name="MOV_NUMCTA" ColumnName="MOV_NUMCTA" />
+          <ScalarProperty Name="MOV_CONCEPTO" ColumnName="MOV_CONCEPTO" />
+          <ScalarProperty Name="MOV_DEBE" ColumnName="MOV_DEBE" />
+          <ScalarProperty Name="MOV_HABER" ColumnName="MOV_HABER" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Cate" ColumnName="Cate" />
+          <ScalarProperty Name="MOV_FECHOPE" ColumnName="MOV_FECHOPE" />
+          <ScalarProperty Name="MOV_HORAOPE" ColumnName="MOV_HORAOPE" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwPerfiles">
+      <EntityTypeMapping TypeName="TroncosoModelo.vwPerfiles">
+        <MappingFragment StoreEntitySet="vwPerfiles">
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwUsuarios">
+      <EntityTypeMapping TypeName="TroncosoModelo.vwUsuarios">
+        <MappingFragment StoreEntitySet="vwUsuarios">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Paterno" ColumnName="Paterno" />
+          <ScalarProperty Name="Materno" ColumnName="Materno" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="IdEstatus" ColumnName="IdEstatus" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="Perfil" ColumnName="Perfil" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="TroncosoModelo.Store.DividirCadena" FunctionImportName="DividirCadena">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TroncosoModelo.DividirCadena_Result">
+          <ScalarProperty Name="Campo" ColumnName="Campo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BuscarFacturasEnOtrasPolizasPorSerie" FunctionName="TroncosoModelo.Store.BuscarFacturasEnOtrasPolizasPorSerie" />
+    <FunctionImportMapping FunctionImportName="BuscarFacturasEnOtrasPolizasPorSerieVentas" FunctionName="TroncosoModelo.Store.BuscarFacturasEnOtrasPolizasPorSerieVentas" />
+    <FunctionImportMapping FunctionImportName="BuscarSerieEnOtrasPolizasPorFactura" FunctionName="TroncosoModelo.Store.BuscarSerieEnOtrasPolizasPorFactura" />
+    <FunctionImportMapping FunctionImportName="BuscarSerieEnOtrasPolizasPorFacturaVentas" FunctionName="TroncosoModelo.Store.BuscarSerieEnOtrasPolizasPorFacturaVentas" />
+    <FunctionImportMapping FunctionImportName="CrearSesion" FunctionName="TroncosoModelo.Store.CrearSesion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TroncosoModelo.CrearSesion_Result">
+          <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="EliminarPermisoPerfil" FunctionName="TroncosoModelo.Store.EliminarPermisoPerfil" />
+    <FunctionImportMapping FunctionImportName="GenerarCostos" FunctionName="TroncosoModelo.Store.GenerarCostos" />
+    <FunctionImportMapping FunctionImportName="GenerarVentas" FunctionName="TroncosoModelo.Store.GenerarVentas" />
+    <FunctionImportMapping FunctionImportName="GuardarBitacora" FunctionName="TroncosoModelo.Store.GuardarBitacora" />
+    <FunctionImportMapping FunctionImportName="GuardarConfiguracionOrdenSer" FunctionName="TroncosoModelo.Store.GuardarConfiguracionOrdenSer" />
+    <FunctionImportMapping FunctionImportName="GuardarPerfil" FunctionName="TroncosoModelo.Store.GuardarPerfil" />
+    <FunctionImportMapping FunctionImportName="GuardarPermisoPerfil" FunctionName="TroncosoModelo.Store.GuardarPermisoPerfil" />
+    <FunctionImportMapping FunctionImportName="GuardarUsuario" FunctionName="TroncosoModelo.Store.GuardarUsuario" />
+    <FunctionImportMapping FunctionImportName="ProcesarLibro" FunctionName="TroncosoModelo.Store.ProcesarLibro" />
+    <EntitySetMapping Name="vwCuentasCostos">
+      <EntityTypeMapping TypeName="TroncosoModelo.vwCuentasCostos">
+        <MappingFragment StoreEntitySet="vwCuentasCostos">
+          <ScalarProperty Name="TipoCuenta" ColumnName="TipoCuenta" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdTipoCuenta" ColumnName="IdTipoCuenta" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+          <ScalarProperty Name="IdCuentaCosto" ColumnName="IdCuentaCosto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="EliminarCuentasCostos" FunctionName="TroncosoModelo.Store.EliminarCuentasCostos" />
+    <FunctionImportMapping FunctionImportName="EliminarCuentasVentas" FunctionName="TroncosoModelo.Store.EliminarCuentasVentas" />
+    <FunctionImportMapping FunctionImportName="GuardarConfiguracionPolizas" FunctionName="TroncosoModelo.Store.GuardarConfiguracionPolizas" />
+    <FunctionImportMapping FunctionImportName="GuardarCuentasCostos" FunctionName="TroncosoModelo.Store.GuardarCuentasCostos" />
+    <FunctionImportMapping FunctionImportName="GuardarCuentasVentas" FunctionName="TroncosoModelo.Store.GuardarCuentasVentas" />
+    <EntitySetMapping Name="vwCuentasVentas">
+      <EntityTypeMapping TypeName="TroncosoModelo.vwCuentasVentas">
+        <MappingFragment StoreEntitySet="vwCuentasVentas">
+          <ScalarProperty Name="TipoCuenta" ColumnName="TipoCuenta" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="IdTipoCuenta" ColumnName="IdTipoCuenta" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+          <ScalarProperty Name="IdCuentaVenta" ColumnName="IdCuentaVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwConfiguracionPolizas">
+      <EntityTypeMapping TypeName="TroncosoModelo.vwConfiguracionPolizas">
+        <MappingFragment StoreEntitySet="vwConfiguracionPolizas">
+          <ScalarProperty Name="TipoDePoliza" ColumnName="TipoDePoliza" />
+          <ScalarProperty Name="IdSesion" ColumnName="IdSesion" />
+          <ScalarProperty Name="FechaSistema" ColumnName="FechaSistema" />
+          <ScalarProperty Name="TipoExtraccion" ColumnName="TipoExtraccion" />
+          <ScalarProperty Name="TipoConfiguracion" ColumnName="TipoConfiguracion" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="Posicion" ColumnName="Posicion" />
+          <ScalarProperty Name="IdTipoDePoliza" ColumnName="IdTipoDePoliza" />
+          <ScalarProperty Name="IdConfiguracionPoliza" ColumnName="IdConfiguracionPoliza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GuardarTablas" FunctionName="TroncosoModelo.Store.GuardarTablas" />
+    <FunctionImportMapping FunctionImportName="GuardarTiposDePolizas" FunctionName="TroncosoModelo.Store.GuardarTiposDePolizas" />
+  </EntityContainerMapping>
+</Mapping>

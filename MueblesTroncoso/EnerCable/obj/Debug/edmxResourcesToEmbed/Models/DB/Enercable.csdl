@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnercableBd" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bitacoras">
+    <Key>
+      <PropertyRef Name="IdBitacora" />
+    </Key>
+    <Property Name="IdBitacora" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="Accion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Cabeceras">
+    <Key>
+      <PropertyRef Name="IdCabecera" />
+    </Key>
+    <Property Name="IdCabecera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Icono" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Estatus">
+    <Key>
+      <PropertyRef Name="IdEstatus" />
+    </Key>
+    <Property Name="IdEstatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Estatus1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Modulo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdCabecera" Type="Int32" />
+    <Property Name="Icono" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Perfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+    </Key>
+    <Property Name="IdPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Perfil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PermisosPerfiles">
+    <Key>
+      <PropertyRef Name="IdPermisoPerfil" />
+    </Key>
+    <Property Name="IdPermisoPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdModulo" Type="Int32" Nullable="false" />
+    <Property Name="IdPerfil" Type="Int32" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sesiones">
+    <Key>
+      <PropertyRef Name="IdSesion" />
+    </Key>
+    <Property Name="IdSesion" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="FechaSistema" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdPerfil" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Paterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Materno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdEstatus" Type="Int32" Nullable="false" />
+    <Property Name="IdSesion" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EnercableEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bitacoras" EntityType="Self.Bitacoras" />
+    <EntitySet Name="Cabeceras" EntityType="Self.Cabeceras" />
+    <EntitySet Name="Estatus" EntityType="Self.Estatus" />
+    <EntitySet Name="Modulos" EntityType="Self.Modulos" />
+    <EntitySet Name="Perfiles" EntityType="Self.Perfiles" />
+    <EntitySet Name="PermisosPerfiles" EntityType="Self.PermisosPerfiles" />
+    <EntitySet Name="Sesiones" EntityType="Self.Sesiones" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <FunctionImport Name="GuardarBitacora">
+      <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+      <Parameter Name="Accion" Mode="In" Type="String" />
+      <Parameter Name="IdSesion" Mode="In" Type="Int64" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

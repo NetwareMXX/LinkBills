@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TroncosoModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bitacoras">
+    <Key>
+      <PropertyRef Name="IdBitacora" />
+    </Key>
+    <Property Name="IdBitacora" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Accion" Type="varchar(max)" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cabeceras">
+    <Key>
+      <PropertyRef Name="IdCabecera" />
+    </Key>
+    <Property Name="IdCabecera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" />
+    <Property Name="Icono" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="ConfiguracionOrdenSer">
+    <Key>
+      <PropertyRef Name="IdConfiguracionOrdenSer" />
+    </Key>
+    <Property Name="IdConfiguracionOrdenSer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LongitudSerieEnSer_Orden" Type="int" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="Fecha" Type="varchar" MaxLength="10" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ConfiguracionPolizas">
+    <Key>
+      <PropertyRef Name="IdConfiguracionPoliza" />
+    </Key>
+    <Property Name="IdConfiguracionPoliza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoDePoliza" Type="int" Nullable="false" />
+    <Property Name="Posicion" Type="int" Nullable="false" />
+    <Property Name="Longitud" Type="int" Nullable="false" />
+    <Property Name="TipoConfiguracion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipoExtraccion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CorreccionMovimientos">
+    <Key>
+      <PropertyRef Name="IdCorreccionMovimiento" />
+    </Key>
+    <Property Name="IdCorreccionMovimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTabla" Type="int" Nullable="false" />
+    <Property Name="MOV_CONSPOL" Type="int" Nullable="false" />
+    <Property Name="MOV_CONSMOV" Type="int" Nullable="false" />
+    <Property Name="MOV_MES" Type="int" Nullable="false" />
+    <Property Name="MOV_TIPOPOL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AplicaFactura" Type="bit" Nullable="false" />
+    <Property Name="Factura" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AplicaSerie" Type="bit" Nullable="false" />
+    <Property Name="Serie" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CuentasCostos">
+    <Key>
+      <PropertyRef Name="IdCuentaCosto" />
+    </Key>
+    <Property Name="IdCuentaCosto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cuenta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IdTipoCuenta" Type="int" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CuentasVentas">
+    <Key>
+      <PropertyRef Name="IdCuentaVenta" />
+    </Key>
+    <Property Name="IdCuentaVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cuenta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IdTipoCuenta" Type="int" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estatus">
+    <Key>
+      <PropertyRef Name="IdEstatus" />
+    </Key>
+    <Property Name="IdEstatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Modulo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IdCabecera" Type="int" Nullable="false" />
+    <Property Name="Icono" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Reportes.dbo.MovimientosCostos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MovimientosCostos">
+    <Key>
+      <PropertyRef Name="IdMovimientoCosto" />
+      <PropertyRef Name="IdUsuario" />
+      <PropertyRef Name="MOV_CONSMOV" />
+      <PropertyRef Name="MOV_MES" />
+      <PropertyRef Name="MOV_NUMCTA" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="IdSesion" />
+    </Key>
+    <Property Name="IdMovimientoCosto" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Factura" Type="varchar" MaxLength="150" />
+    <Property Name="Serie" Type="varchar" MaxLength="150" />
+    <Property Name="Mov_TipoPol" Type="varchar" MaxLength="150" />
+    <Property Name="MOV_CONSPOL" Type="nchar" MaxLength="10" />
+    <Property Name="MOV_CONSMOV" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MOV_MES" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MOV_NUMCTA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MOV_CONCEPTO" Type="varchar" MaxLength="250" />
+    <Property Name="MOV_DEBE" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="MOV_HABER" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Cate" Type="varchar" MaxLength="150" />
+    <Property Name="MOV_FECHOPE" Type="varchar" MaxLength="10" />
+    <Property Name="MOV_HORAOPE" Type="varchar" MaxLength="8" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Reportes.dbo.MovimientosVentas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MovimientosVentas">
+    <Key>
+      <PropertyRef Name="IdMovimientoVenta" />
+      <PropertyRef Name="IdUsuario" />
+      <PropertyRef Name="MOV_CONSMOV" />
+      <PropertyRef Name="MOV_MES" />
+      <PropertyRef Name="MOV_NUMCTA" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="IdSesion" />
+    </Key>
+    <Property Name="IdMovimientoVenta" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Factura" Type="varchar" MaxLength="150" />
+    <Property Name="Serie" Type="varchar" MaxLength="150" />
+    <Property Name="Mov_TipoPol" Type="varchar" MaxLength="150" />
+    <Property Name="MOV_CONSPOL" Type="nchar" MaxLength="10" />
+    <Property Name="MOV_CONSMOV" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MOV_MES" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="MOV_NUMCTA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MOV_CONCEPTO" Type="varchar" MaxLength="250" />
+    <Property Name="MOV_DEBE" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="MOV_HABER" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Cate" Type="varchar" MaxLength="150" />
+    <Property Name="MOV_FECHOPE" Type="varchar" MaxLength="10" />
+    <Property Name="MOV_HORAOPE" Type="varchar" MaxLength="8" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Perfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+    </Key>
+    <Property Name="IdPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Perfil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdEstatus" Type="int" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PermisosPerfiles">
+    <Key>
+      <PropertyRef Name="IdPermisoPerfil" />
+    </Key>
+    <Property Name="IdPermisoPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdModulo" Type="int" Nullable="false" />
+    <Property Name="IdPerfil" Type="int" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sesiones">
+    <Key>
+      <PropertyRef Name="IdSesion" />
+    </Key>
+    <Property Name="IdSesion" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="Ip" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tablas">
+    <Key>
+      <PropertyRef Name="IdTabla" />
+    </Key>
+    <Property Name="IdTabla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tabla" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Ejercicio" Type="int" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="TablaNCRBON" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoCuentas">
+    <Key>
+      <PropertyRef Name="IdTipoCuenta" />
+    </Key>
+    <Property Name="IdTipoCuenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoCuenta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoDocumentos">
+    <Key>
+      <PropertyRef Name="IdTipoDocumento" />
+    </Key>
+    <Property Name="IdTipoDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoDocumento" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TiposDePolizas">
+    <Key>
+      <PropertyRef Name="IdTipoDePoliza" />
+    </Key>
+    <Property Name="IdTipoDePoliza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoDePoliza" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AplicaNombreCuenta" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="AplicaCondicionNombreCuenta" Type="varchar" MaxLength="2" />
+    <Property Name="Posicion" Type="int" Nullable="false" />
+    <Property Name="Longitud" Type="int" Nullable="false" />
+    <Property Name="TipoExtraccion" Type="varchar" MaxLength="50" />
+    <Property Name="DatoValidar" Type="varchar" MaxLength="100" />
+    <Property Name="Cate" Type="varchar" MaxLength="50" />
+    <Property Name="AplicaFacturaEnSerie" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdPerfil" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Paterno" Type="varchar" MaxLength="50" />
+    <Property Name="Materno" Type="varchar" MaxLength="50" />
+    <Property Name="Correo" Type="varchar" MaxLength="150" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
+    <Property Name="IdEstatus" Type="int" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Reportes.dbo.vwConfiguracionPolizas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwConfiguracionPolizas">
+    <Key>
+      <PropertyRef Name="IdConfiguracionPoliza" />
+      <PropertyRef Name="IdTipoDePoliza" />
+      <PropertyRef Name="Posicion" />
+      <PropertyRef Name="Longitud" />
+      <PropertyRef Name="TipoConfiguracion" />
+      <PropertyRef Name="TipoExtraccion" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="IdSesion" />
+      <PropertyRef Name="TipoDePoliza" />
+    </Key>
+    <Property Name="IdConfiguracionPoliza" Type="int" Nullable="false" />
+    <Property Name="IdTipoDePoliza" Type="int" Nullable="false" />
+    <Property Name="Posicion" Type="int" Nullable="false" />
+    <Property Name="Longitud" Type="int" Nullable="false" />
+    <Property Name="TipoConfiguracion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipoExtraccion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="TipoDePoliza" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Reportes.dbo.vwCuentasCostos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwCuentasCostos">
+    <Key>
+      <PropertyRef Name="IdCuentaCosto" />
+      <PropertyRef Name="Cuenta" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="IdTipoCuenta" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="IdSesion" />
+      <PropertyRef Name="TipoCuenta" />
+    </Key>
+    <Property Name="IdCuentaCosto" Type="int" Nullable="false" />
+    <Property Name="Cuenta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IdTipoCuenta" Type="int" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="TipoCuenta" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Reportes.dbo.vwCuentasVentas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwCuentasVentas">
+    <Key>
+      <PropertyRef Name="IdCuentaVenta" />
+      <PropertyRef Name="Cuenta" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="IdTipoCuenta" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="IdSesion" />
+      <PropertyRef Name="TipoCuenta" />
+    </Key>
+    <Property Name="IdCuentaVenta" Type="int" Nullable="false" />
+    <Property Name="Cuenta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IdTipoCuenta" Type="int" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="TipoCuenta" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Reportes.dbo.vwPerfiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwPerfiles">
+    <Key>
+      <PropertyRef Name="IdPerfil" />
+      <PropertyRef Name="Perfil" />
+      <PropertyRef Name="IdEstatus" />
+      <PropertyRef Name="IdSesion" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="Estatus" />
+    </Key>
+    <Property Name="IdPerfil" Type="int" Nullable="false" />
+    <Property Name="Perfil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdEstatus" Type="int" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="Estatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Reportes.dbo.vwUsuarios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwUsuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+      <PropertyRef Name="Usuario" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="IdPerfil" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="IdEstatus" />
+      <PropertyRef Name="IdSesion" />
+      <PropertyRef Name="FechaSistema" />
+      <PropertyRef Name="Perfil" />
+      <PropertyRef Name="Estatus" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdPerfil" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Paterno" Type="varchar" MaxLength="50" />
+    <Property Name="Materno" Type="varchar" MaxLength="50" />
+    <Property Name="Correo" Type="varchar" MaxLength="150" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
+    <Property Name="IdEstatus" Type="int" Nullable="false" />
+    <Property Name="IdSesion" Type="bigint" Nullable="false" />
+    <Property Name="FechaSistema" Type="datetime" Nullable="false" />
+    <Property Name="Perfil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Estatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Function Name="BuscarFacturasEnOtrasPolizasPorSerie" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdMovimientosCostos" Type="varchar(max)" Mode="In" />
+    <Parameter Name="TipoDePolizas" Type="varchar(max)" Mode="In" />
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+    <Parameter Name="IdTabla" Type="int" Mode="In" />
+  </Function>
+  <Function Name="BuscarFacturasEnOtrasPolizasPorSerieVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdMovimientosVentas" Type="varchar(max)" Mode="In" />
+    <Parameter Name="TipoDePolizas" Type="varchar(max)" Mode="In" />
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+    <Parameter Name="IdTabla" Type="int" Mode="In" />
+  </Function>
+  <Function Name="BuscarSerieEnOtrasPolizasPorFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdMovimientosCostos" Type="varchar(max)" Mode="In" />
+    <Parameter Name="TipoDePolizas" Type="varchar(max)" Mode="In" />
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+    <Parameter Name="IdTabla" Type="int" Mode="In" />
+  </Function>
+  <Function Name="BuscarSerieEnOtrasPolizasPorFacturaVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdMovimientosVentas" Type="varchar(max)" Mode="In" />
+    <Parameter Name="TipoDePolizas" Type="varchar(max)" Mode="In" />
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+    <Parameter Name="IdTabla" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CrearSesion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Contraseña" Type="varchar" Mode="In" />
+    <Parameter Name="Ip" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="DividirCadena" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cadena" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Divisor" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Campo" Type="nvarchar(max)" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="EliminarCuentasCostos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCuentaCosto" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="EliminarCuentasVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCuentaVenta" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="EliminarPermisoPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdPermisoPerfil" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GenerarCostos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdMes" Type="int" Mode="In" />
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GenerarVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdMes" Type="int" Mode="In" />
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GuardarBitacora" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Accion" Type="varchar(max)" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarConfiguracionOrdenSer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LongitudSerieEnSer_Orden" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarConfiguracionPolizas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdConfiguracionPoliza" Type="int" Mode="In" />
+    <Parameter Name="IdTipoDePoliza" Type="int" Mode="In" />
+    <Parameter Name="Posicion" Type="int" Mode="In" />
+    <Parameter Name="Longitud" Type="int" Mode="In" />
+    <Parameter Name="TipoConfiguracion" Type="varchar" Mode="In" />
+    <Parameter Name="TipoExtraccion" Type="varchar" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarCuentasCostos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCuentaCosto" Type="int" Mode="In" />
+    <Parameter Name="Cuenta" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="IdTipoCuenta" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarCuentasVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCuentaVenta" Type="int" Mode="In" />
+    <Parameter Name="Cuenta" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="IdTipoCuenta" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdPerfil" Type="int" Mode="In" />
+    <Parameter Name="IdEstatus" Type="int" Mode="In" />
+    <Parameter Name="Perfil" Type="varchar" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarPermisoPerfil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdModulo" Type="int" Mode="In" />
+    <Parameter Name="IdPerfil" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarTablas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdTabla" Type="int" Mode="In" />
+    <Parameter Name="Tabla" Type="varchar" Mode="In" />
+    <Parameter Name="Ejercicio" Type="int" Mode="In" />
+    <Parameter Name="Activo" Type="bit" Mode="In" />
+    <Parameter Name="TablaNCRBON" Type="varchar" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarTiposDePolizas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdTipoDePoliza" Type="int" Mode="In" />
+    <Parameter Name="TipoDePoliza" Type="varchar" Mode="In" />
+    <Parameter Name="AplicaNombreCuenta" Type="varchar" Mode="In" />
+    <Parameter Name="AplicaCondicionNombreCuenta" Type="varchar" Mode="In" />
+    <Parameter Name="Posicion" Type="int" Mode="In" />
+    <Parameter Name="Longitud" Type="int" Mode="In" />
+    <Parameter Name="TipoExtraccion" Type="varchar" Mode="In" />
+    <Parameter Name="DatoValidar" Type="varchar" Mode="In" />
+    <Parameter Name="Cate" Type="varchar" Mode="In" />
+    <Parameter Name="AplicaFacturaEnSerie" Type="varchar" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GuardarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+    <Parameter Name="Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="IdPerfil" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Paterno" Type="varchar" Mode="In" />
+    <Parameter Name="Materno" Type="varchar" Mode="In" />
+    <Parameter Name="Correo" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="varchar" Mode="In" />
+    <Parameter Name="IdEstatus" Type="int" Mode="In" />
+    <Parameter Name="IdSesion" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="ObtenerCate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="TipoPoliza" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ObtenerNumero" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="TipoPoliza" Type="varchar" Mode="In" />
+    <Parameter Name="Concepto" Type="varchar(max)" Mode="In" />
+    <Parameter Name="TipoBusqueda" Type="varchar" Mode="In" />
+    <Parameter Name="Cuenta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ObtenerNumeroVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="TipoPoliza" Type="varchar" Mode="In" />
+    <Parameter Name="Concepto" Type="varchar(max)" Mode="In" />
+    <Parameter Name="TipoBusqueda" Type="varchar" Mode="In" />
+    <Parameter Name="Cuenta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ProcesarLibro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdMes" Type="int" Mode="In" />
+    <Parameter Name="IdUsuario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegresaExtraccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Concepto" Type="varchar(max)" Mode="In" />
+    <Parameter Name="TipoExtraccion" Type="varchar" Mode="In" />
+    <Parameter Name="Posicion" Type="int" Mode="In" />
+    <Parameter Name="Longitud" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegresaFacturaEnSerie" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Factura" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="RegresaFacturaNumeros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="FacturaConLetras" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="RegresaNombreCuentaCostos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Cuenta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="RegresaNombreCuentaVenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Cuenta" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SerieNCRBON" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="CCP" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="TroncosoModeloStoreContainer">
+    <EntitySet Name="Bitacoras" EntityType="Self.Bitacoras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cabeceras" EntityType="Self.Cabeceras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConfiguracionOrdenSer" EntityType="Self.ConfiguracionOrdenSer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConfiguracionPolizas" EntityType="Self.ConfiguracionPolizas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CorreccionMovimientos" EntityType="Self.CorreccionMovimientos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CuentasCostos" EntityType="Self.CuentasCostos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CuentasVentas" EntityType="Self.CuentasVentas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perfiles" EntityType="Self.Perfiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PermisosPerfiles" EntityType="Self.PermisosPerfiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sesiones" EntityType="Self.Sesiones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tablas" EntityType="Self.Tablas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoCuentas" EntityType="Self.TipoCuentas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDocumentos" EntityType="Self.TipoDocumentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TiposDePolizas" EntityType="Self.TiposDePolizas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovimientosCostos" EntityType="Self.MovimientosCostos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MovimientosCostos].[IdMovimientoCosto] AS [IdMovimientoCosto], 
+    [MovimientosCostos].[IdUsuario] AS [IdUsuario], 
+    [MovimientosCostos].[Factura] AS [Factura], 
+    [MovimientosCostos].[Serie] AS [Serie], 
+    [MovimientosCostos].[Mov_TipoPol] AS [Mov_TipoPol], 
+    [MovimientosCostos].[MOV_CONSPOL] AS [MOV_CONSPOL], 
+    [MovimientosCostos].[MOV_CONSMOV] AS [MOV_CONSMOV], 
+    [MovimientosCostos].[MOV_MES] AS [MOV_MES], 
+    [MovimientosCostos].[MOV_NUMCTA] AS [MOV_NUMCTA], 
+    [MovimientosCostos].[MOV_CONCEPTO] AS [MOV_CONCEPTO], 
+    [MovimientosCostos].[MOV_DEBE] AS [MOV_DEBE], 
+    [MovimientosCostos].[MOV_HABER] AS [MOV_HABER], 
+    [MovimientosCostos].[Total] AS [Total], 
+    [MovimientosCostos].[Cate] AS [Cate], 
+    [MovimientosCostos].[MOV_FECHOPE] AS [MOV_FECHOPE], 
+    [MovimientosCostos].[MOV_HORAOPE] AS [MOV_HORAOPE], 
+    [MovimientosCostos].[FechaSistema] AS [FechaSistema], 
+    [MovimientosCostos].[IdSesion] AS [IdSesion]
+    FROM [dbo].[MovimientosCostos] AS [MovimientosCostos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MovimientosVentas" EntityType="Self.MovimientosVentas" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MovimientosVentas].[IdMovimientoVenta] AS [IdMovimientoVenta], 
+    [MovimientosVentas].[IdUsuario] AS [IdUsuario], 
+    [MovimientosVentas].[Factura] AS [Factura], 
+    [MovimientosVentas].[Serie] AS [Serie], 
+    [MovimientosVentas].[Mov_TipoPol] AS [Mov_TipoPol], 
+    [MovimientosVentas].[MOV_CONSPOL] AS [MOV_CONSPOL], 
+    [MovimientosVentas].[MOV_CONSMOV] AS [MOV_CONSMOV], 
+    [MovimientosVentas].[MOV_MES] AS [MOV_MES], 
+    [MovimientosVentas].[MOV_NUMCTA] AS [MOV_NUMCTA], 
+    [MovimientosVentas].[MOV_CONCEPTO] AS [MOV_CONCEPTO], 
+    [MovimientosVentas].[MOV_DEBE] AS [MOV_DEBE], 
+    [MovimientosVentas].[MOV_HABER] AS [MOV_HABER], 
+    [MovimientosVentas].[Total] AS [Total], 
+    [MovimientosVentas].[Cate] AS [Cate], 
+    [MovimientosVentas].[MOV_FECHOPE] AS [MOV_FECHOPE], 
+    [MovimientosVentas].[MOV_HORAOPE] AS [MOV_HORAOPE], 
+    [MovimientosVentas].[FechaSistema] AS [FechaSistema], 
+    [MovimientosVentas].[IdSesion] AS [IdSesion]
+    FROM [dbo].[MovimientosVentas] AS [MovimientosVentas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwConfiguracionPolizas" EntityType="Self.vwConfiguracionPolizas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwConfiguracionPolizas].[IdConfiguracionPoliza] AS [IdConfiguracionPoliza], 
+    [vwConfiguracionPolizas].[IdTipoDePoliza] AS [IdTipoDePoliza], 
+    [vwConfiguracionPolizas].[Posicion] AS [Posicion], 
+    [vwConfiguracionPolizas].[Longitud] AS [Longitud], 
+    [vwConfiguracionPolizas].[TipoConfiguracion] AS [TipoConfiguracion], 
+    [vwConfiguracionPolizas].[TipoExtraccion] AS [TipoExtraccion], 
+    [vwConfiguracionPolizas].[FechaSistema] AS [FechaSistema], 
+    [vwConfiguracionPolizas].[IdSesion] AS [IdSesion], 
+    [vwConfiguracionPolizas].[TipoDePoliza] AS [TipoDePoliza]
+    FROM [dbo].[vwConfiguracionPolizas] AS [vwConfiguracionPolizas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwCuentasCostos" EntityType="Self.vwCuentasCostos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwCuentasCostos].[IdCuentaCosto] AS [IdCuentaCosto], 
+    [vwCuentasCostos].[Cuenta] AS [Cuenta], 
+    [vwCuentasCostos].[Nombre] AS [Nombre], 
+    [vwCuentasCostos].[IdTipoCuenta] AS [IdTipoCuenta], 
+    [vwCuentasCostos].[FechaSistema] AS [FechaSistema], 
+    [vwCuentasCostos].[IdSesion] AS [IdSesion], 
+    [vwCuentasCostos].[TipoCuenta] AS [TipoCuenta]
+    FROM [dbo].[vwCuentasCostos] AS [vwCuentasCostos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwCuentasVentas" EntityType="Self.vwCuentasVentas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwCuentasVentas].[IdCuentaVenta] AS [IdCuentaVenta], 
+    [vwCuentasVentas].[Cuenta] AS [Cuenta], 
+    [vwCuentasVentas].[Nombre] AS [Nombre], 
+    [vwCuentasVentas].[IdTipoCuenta] AS [IdTipoCuenta], 
+    [vwCuentasVentas].[FechaSistema] AS [FechaSistema], 
+    [vwCuentasVentas].[IdSesion] AS [IdSesion], 
+    [vwCuentasVentas].[TipoCuenta] AS [TipoCuenta]
+    FROM [dbo].[vwCuentasVentas] AS [vwCuentasVentas]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwPerfiles" EntityType="Self.vwPerfiles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwPerfiles].[IdPerfil] AS [IdPerfil], 
+    [vwPerfiles].[Perfil] AS [Perfil], 
+    [vwPerfiles].[IdEstatus] AS [IdEstatus], 
+    [vwPerfiles].[IdSesion] AS [IdSesion], 
+    [vwPerfiles].[FechaSistema] AS [FechaSistema], 
+    [vwPerfiles].[Estatus] AS [Estatus]
+    FROM [dbo].[vwPerfiles] AS [vwPerfiles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwUsuarios" EntityType="Self.vwUsuarios" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwUsuarios].[IdUsuario] AS [IdUsuario], 
+    [vwUsuarios].[Usuario] AS [Usuario], 
+    [vwUsuarios].[Password] AS [Password], 
+    [vwUsuarios].[IdPerfil] AS [IdPerfil], 
+    [vwUsuarios].[Nombre] AS [Nombre], 
+    [vwUsuarios].[Paterno] AS [Paterno], 
+    [vwUsuarios].[Materno] AS [Materno], 
+    [vwUsuarios].[Correo] AS [Correo], 
+    [vwUsuarios].[Telefono] AS [Telefono], 
+    [vwUsuarios].[IdEstatus] AS [IdEstatus], 
+    [vwUsuarios].[IdSesion] AS [IdSesion], 
+    [vwUsuarios].[FechaSistema] AS [FechaSistema], 
+    [vwUsuarios].[Perfil] AS [Perfil], 
+    [vwUsuarios].[Estatus] AS [Estatus]
+    FROM [dbo].[vwUsuarios] AS [vwUsuarios]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
